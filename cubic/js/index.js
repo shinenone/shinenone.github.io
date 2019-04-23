@@ -153,42 +153,45 @@ window.addEventListener('scroll', () => {
     var scrollTop = $(document).scrollTop();
 
     // 导航条样式
-    if (scrollTop >= ($('#who-we-are')[0].offsetTop - 200)) {
-        // 增加背景色
-        $('#top').css({
-            'padding-top': '0px',
-            'background': 'rgba(255,255,255,0.9)',
-            'border-bottom': '1px solid #eee'
-        })
-        // 文字变成黑色
-        $('.navbar-right li a').css({
-            'color': '#000',
-            'line-height': '40px'
-        })
-        // 更换logo
-        $('.navbar-header .logo img')[0].setAttribute('src', './img/logo-2.png')
-        $('.navbar-header .logo img').css({ 'height': '30px' })
-        $('.navbar-header .logo img').css({ 'line-height': '100px' })
-        $('.navbar').css({ 'line-height': '70px' })
-        $("#to-top").css({
-            'opacity': 1,
-            'visibility': 'visible'
-        })
-    } else {
-        $('#top').css({
-            'padding-top': '30px',
-            'background': 'none',
-            'border-bottom': 'none'
-        })
-        $('.navbar-right li a').css({ 'color': '#fff' })
-        $('.navbar-right li a').eq(0).css({ 'color': '#ffa200' })
-        $('.navbar-header .logo img')[0].setAttribute('src', './img/logo.png')
-        $('.navbar-header .logo img').css({ 'height': '100%' })
-        $("#to-top").css({
-            'opacity': 0,
-            'visibility': 'hidden'
-        })
+    if (window.innerWidth > 992) {
+        if (scrollTop >= ($('#who-we-are')[0].offsetTop - 200)) {
+            // 增加背景色
+            $('#top').css({
+                'padding-top': '0px',
+                'background': 'rgba(255,255,255,0.9)',
+                'border-bottom': '1px solid #eee'
+            })
+            // 文字变成黑色
+            $('.navbar-right li a').css({
+                'color': '#000',
+                'line-height': '40px'
+            })
+            // 更换logo
+            $('.navbar-header .logo img')[0].setAttribute('src', './img/logo-2.png')
+            $('.navbar-header .logo img').css({ 'height': '30px' })
+            $('.navbar-header .logo img').css({ 'line-height': '100px' })
+            $('.navbar').css({ 'line-height': '70px' })
+            $("#to-top").css({
+                'opacity': 1,
+                'visibility': 'visible'
+            })
+        } else {
+            $('#top').css({
+                'padding-top': '30px',
+                'background': 'none',
+                'border-bottom': 'none'
+            })
+            $('.navbar-right li a').css({ 'color': '#fff' })
+            $('.navbar-right li a').eq(0).css({ 'color': '#ffa200' })
+            $('.navbar-header .logo img')[0].setAttribute('src', './img/logo.png')
+            $('.navbar-header .logo img').css({ 'height': '100%' })
+            $("#to-top").css({
+                'opacity': 0,
+                'visibility': 'hidden'
+            })
+        }
     }
+
 
     beforeScrollTop = afterScrollTop;
     afterScrollTop = scrollTop;
@@ -286,40 +289,51 @@ window.addEventListener('scroll', () => {
         }
     }
 
-    // 导航条文字变色
-    if (scrollTop > ($('#who-we-are')[0].offsetTop - 200)) {
-        remove()
-        add(1)
+    if (window.innerWidth > 992) {
+        // 导航条文字变色
+        if (scrollTop > ($('#who-we-are')[0].offsetTop - 200)) {
+            remove('#000')
+            add(1)
+        }
+        if (scrollTop > ($('#team')[0].offsetTop - 200)) {
+            remove('#000')
+            add(2)
+        }
+        if (scrollTop > ($('#services')[0].offsetTop - 200)) {
+            remove('#000')
+            add(3)
+        }
+        if (scrollTop > ($('#portfolio')[0].offsetTop - 200)) {
+            remove('#000')
+            add(4)
+        }
+        if (scrollTop > ($('#says')[0].offsetTop - 200)) {
+            remove('#000')
+            add(5)
+        }
+        if (scrollTop > ($('#news')[0].offsetTop - 200)) {
+            remove('#000')
+            add(6)
+        }
+        if (scrollTop > ($('#us')[0].offsetTop - 200)) {
+            remove('#000')
+            add(7)
+        }
     }
-    if (scrollTop > ($('#team')[0].offsetTop - 200)) {
-        remove()
-        add(2)
-    }
-    if (scrollTop > ($('#services')[0].offsetTop - 200)) {
-        remove()
-        add(3)
-    }
-    if (scrollTop > ($('#portfolio')[0].offsetTop - 200)) {
-        remove()
-        add(4)
-    }
-    if (scrollTop > ($('#says')[0].offsetTop - 200)) {
-        remove()
-        add(5)
-    }
-    if (scrollTop > ($('#news')[0].offsetTop - 200)) {
-        remove()
-        add(6)
-    }
-    if (scrollTop > ($('#us')[0].offsetTop - 200)) {
-        remove()
-        add(7)
+
+
+
+    if (scrollTop <= ($('#who-we-are')[0].offsetTop - 200)) {
+        for (let i = 0; i < $('.navbar-right').children().length; i++) {
+            $('.navbar-right').children().eq(i).children().eq(0).css({ 'color': '#fff' })
+        }
+        add(0)
     }
 })
 
-function remove() {
+function remove(color) {
     for (let i = 0; i < $('.navbar-right').children().length; i++) {
-        $('.navbar-right').children().eq(i).children().eq(0).css({ 'color': '#000' })
+        $('.navbar-right').children().eq(i).children().eq(0).css({ 'color': color })
     }
 }
 
@@ -336,6 +350,16 @@ function scrollGoTo(distance) {
 $("#to-top").on('click', function () {
     scrollGoTo(0)
 })
+
+// 小屏时点击导航条导航文字，导航条会缩起
+if (window.innerWidth < 768) {
+    for (let i = 0; i < $('.navbar-right').children().length; i++) {
+        $('.navbar-right').children().eq(i).children().on('click', function () {
+            $('#bs-example-navbar-collapse-1').removeClass('in')
+            $('#bs-example-navbar-collapse-1')[0].setAttribute('aria-expanded','false')
+        })
+    }
+}
 
 // 导航条应该跳转的位置存储到数组
 var arr = [0, $('#who-we-are')[0].offsetTop, $('#team')[0].offsetTop, $('#services')[0].offsetTop, $('#portfolio')[0].offsetTop, $('#says')[0].offsetTop, $('#news')[0].offsetTop, $('#us')[0].offsetTop]

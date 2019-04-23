@@ -1,9 +1,18 @@
 @media screen and (max-width: 768px) {
-  header .top .navbar {
-    background: #000;
+  header #top {
+    position: static;
+    margin-top: -50px;
+    padding-bottom: 20px;
   }
   .character {
     font-size: 2.2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  header #top {
+    position: fixed;
+    -webkit-transition: all .3s;
+    transition: all .3s;
   }
 }
 @media screen and (max-width: 850px) {
@@ -14,6 +23,9 @@
 @media screen and (max-width: 992px) {
   #works .pic {
     display: none;
+  }
+  #top {
+    background: #000;
   }
   #works .content {
     padding: 0 25px;
@@ -40,14 +52,10 @@ header {
   min-height: 722px;
 }
 header #top {
-  position: fixed;
   top: 0;
   z-index: 999999999999;
-  background: none;
   width: 100%;
-  padding-top: 30px;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  padding-top: 20px;
 }
 header #top .navbar {
   background: none;
@@ -60,6 +68,12 @@ header #top .navbar .container-fluid .navbar-header button {
 }
 header #top .navbar .container-fluid .navbar-header button span {
   background: #fff;
+}
+header #top .navbar .container-fluid .navbar-header button:focus {
+  background: #fff;
+}
+header #top .navbar .container-fluid .navbar-header button:focus span {
+  background: #000;
 }
 header #top .navbar .container-fluid .navbar-right li a {
   color: #fff;
@@ -1034,6 +1048,7 @@ header #middle .info a.header-middle-btn:hover {
 }
 #main #us .massage {
   margin-top: 20px;
+  padding: 0 15px;
 }
 #main #us .massage form {
   color: #fff;
@@ -1042,7 +1057,7 @@ header #middle .info a.header-middle-btn:hover {
 }
 #main #us .massage form input[type=text],
 #main #us .massage form input[type=email] {
-  width: 45%;
+  width: 43%;
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid #555;
   margin-bottom: 20px;
@@ -1071,14 +1086,14 @@ header #middle .info a.header-middle-btn:hover {
   background: #ffa200;
 }
 #main #us .massage form textarea {
-  width: 94%;
+  width: 90%;
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid #555;
   margin-bottom: 20px;
   padding: 5px 10px 5px 10px;
   outline: none;
   height: 100px;
-  margin-left: 20px;
+  margin-left: 18px;
 }
 #main #us .massage ul.menu li {
   border-bottom: 1px solid #555;

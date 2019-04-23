@@ -1,10 +1,23 @@
 // 媒体查询
+
+//  小屏幕时，导航条固定在顶部
 @media screen and (max-width:768px) {
-    header .top .navbar {
-        background: #000;
+    header #top {
+        position: static;
+        margin-top: -50px;
+        padding-bottom: 20px;
     }
+
     .character {
         font-size: 2.2rem;
+    }
+}
+
+//  中大屏幕时，导航条随滚动而滚动
+@media screen and (min-width:768px) {
+    header #top {
+        position: fixed;
+        transition: all .3s;
     }
 }
 
@@ -14,13 +27,20 @@
     }
 }
 
+// 大屏时
 @media screen and (max-width:992px) {
     #works .pic {
         display: none;
     }
+
+    #top {
+        background: #000;
+    }
+
     #works .content {
         padding: 0 25px;
     }
+
     .character {
         font-size: 2.2rem;
     }
@@ -55,13 +75,10 @@ header {
     min-height: 722px;
 
     #top {
-        position: fixed;
         top: 0;
         z-index: 999999999999;
-        background: none;
         width: 100%;
-        padding-top: 30px;
-        transition: all .3s;
+        padding-top: 20px;
 
         .navbar {
             background: none;
@@ -76,6 +93,14 @@ header {
 
                         span {
                             background: #fff;
+                        }
+
+                        &:focus {
+                            background: #fff;
+
+                            span {
+                                background: #000;
+                            }
                         }
                     }
                 }
@@ -1311,6 +1336,7 @@ header {
 
         .massage {
             margin-top: 20px;
+            padding: 0 15px;
 
             form {
                 color: #fff;
@@ -1319,7 +1345,7 @@ header {
 
                 input[type=text],
                 input[type=email] {
-                    width: 45%;
+                    width: 43%;
                     background: rgba(0, 0, 0, 0.4);
                     border: 1px solid #555;
                     margin-bottom: 20px;
@@ -1351,14 +1377,14 @@ header {
                 }
 
                 textarea {
-                    width: 94%;
+                    width: 90%;
                     background: rgba(0, 0, 0, 0.4);
                     border: 1px solid #555;
                     margin-bottom: 20px;
                     padding: 5px 10px 5px 10px;
                     outline: none;
                     height: 100px;
-                    margin-left: 20px;
+                    margin-left: 18px;
                 }
             }
 
