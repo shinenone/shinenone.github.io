@@ -134,6 +134,22 @@ function widthChange() {
         $('.character').css({
             'font-size': '2.6rem'
         })
+        $('#rock .content').css({
+            'padding-top': '30px'
+        })
+    }
+
+    if (window.innerWidth < 320) {
+        $('.character').css({
+            'font-size': '2.6rem'
+        })
+        $('#rock .content').css({
+            'padding-top': 0
+        })
+        $('#rock .content h3').css({
+            'padding-top': '15px',
+            'margin': 0
+        })
     }
 }
 
@@ -356,7 +372,7 @@ if (window.innerWidth < 768) {
     for (let i = 0; i < $('.navbar-right').children().length; i++) {
         $('.navbar-right').children().eq(i).children().on('click', function () {
             $('#bs-example-navbar-collapse-1').removeClass('in')
-            $('#bs-example-navbar-collapse-1')[0].setAttribute('aria-expanded','false')
+            $('#bs-example-navbar-collapse-1')[0].setAttribute('aria-expanded', 'false')
         })
     }
 }
@@ -366,6 +382,8 @@ var arr = [0, $('#who-we-are')[0].offsetTop, $('#team')[0].offsetTop, $('#servic
 // 绑定点击事件
 for (let i = 0; i < $('.navbar-right').children().length; i++) {
     $('.navbar-right').children().eq(i).children().on('click', function () {
+        console.log(i);
+
         scrollGoTo(arr[i])
     })
 }
