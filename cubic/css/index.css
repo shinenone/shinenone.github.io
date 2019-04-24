@@ -154,6 +154,7 @@ header #middle .info a.header-middle-btn:hover {
 }
 #main #who-we-are {
   padding: 90px 0;
+  position: relative;
 }
 #main #who-we-are .test-text h3 {
   color: #000;
@@ -305,7 +306,6 @@ header #middle .info a.header-middle-btn:hover {
   overflow: hidden;
 }
 #main #rock .bg-video {
-  background: red;
   position: absolute;
   top: 0;
   left: 0;
@@ -1101,6 +1101,7 @@ header #middle .info a.header-middle-btn:hover {
   outline: none;
   height: 100px;
   margin-left: 18px;
+  resize: none;
 }
 #main #us .massage ul.menu li {
   border-bottom: 1px solid #555;

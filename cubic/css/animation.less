@@ -1,12 +1,31 @@
 @keyframes whoAnimation {
     0% {
-        transform: scale(0);
+        top: 200px;
+        opacity: 0;
     }
 
     100% {
-        transform: scale(1);
+        top: 0;
+        opacity: 1;
     }
 }
+
+#who-we-are.animation {
+    animation: whoAnimation .7s 1 cubic-bezier(0.74, 0.02, 0.46, 1.4);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @keyframes worksAnimation {
     0% {
