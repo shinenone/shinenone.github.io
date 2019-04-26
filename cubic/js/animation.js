@@ -22,8 +22,27 @@ window.addEventListener('scroll', () => {
         $('#facts')[0].setAttribute("data-animation", "true")
     }
 
+    if (scrollTop >= ($('#services')[0].offsetTop + 100)) {
+        $('#services')[0].setAttribute("data-animation", "true")
+    }
+
+    if (scrollTop >= ($('#skill')[0].offsetTop + 100)) {
+        $('#skill')[0].setAttribute("data-animation", "true")
+    }
 
     if (scrollTop >= ($('#portfolio')[0].offsetTop + 100)) {
         $('#portfolio')[0].setAttribute("data-animation", "true")
+    }
+
+    if (scrollTop >= ($('#says')[0].offsetTop + 100)) {
+        $('#says')[0].setAttribute("data-animation", "true")
+    }
+
+    if (scrollTop >= ($('#news')[0].offsetTop + 100)) {
+        $('#news')[0].setAttribute("data-animation", "true")
+    }
+
+    if (scrollTop >= ($('#us')[0].offsetTop + 100)) {
+        $('#us')[0].setAttribute("data-animation", "true")
     }
 })
