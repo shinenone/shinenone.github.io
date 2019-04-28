@@ -1,7 +1,13 @@
 let winHeight = window.innerHeight;
-$('header').css({
-    'height': winHeight + 'px'
-})
+if (winHeight < 1080) {
+    $('header').css({
+        'height': winHeight + 'px'
+    })
+} else {
+    $('header').css({
+        'height': '1080px'
+    })
+}
 
 // header里轮播
 let sliderNum = 0;
@@ -382,8 +388,6 @@ var arr = [0, $('#who-we-are')[0].offsetTop, $('#team')[0].offsetTop, $('#servic
 // 绑定点击事件
 for (let i = 0; i < $('.navbar-right').children().length; i++) {
     $('.navbar-right').children().eq(i).children().on('click', function () {
-        console.log(i);
-
         scrollGoTo(arr[i])
     })
 }
