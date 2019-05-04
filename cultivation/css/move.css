@@ -1,0 +1,293 @@
+@-webkit-keyframes logoShow {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes logoShow {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes gridOneShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-500px);
+            transform: translateX(-500px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@keyframes gridOneShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-500px);
+            transform: translateX(-500px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@-webkit-keyframes gridTwoShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@keyframes gridTwoShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@-webkit-keyframes gridThreeShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(500px);
+            transform: translateY(500px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@keyframes gridThreeShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(500px);
+            transform: translateY(500px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@-webkit-keyframes gridFourShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(500px);
+            transform: translateX(500px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@keyframes gridFourShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(500px);
+            transform: translateX(500px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@-webkit-keyframes aboutLeftShow {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@keyframes aboutLeftShow {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@-webkit-keyframes aboutRightShow {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@keyframes aboutRightShow {
+  0% {
+    -webkit-transform: translateX(-1000px);
+            transform: translateX(-1000px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@-webkit-keyframes cardOneShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@keyframes cardOneShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@-webkit-keyframes cardTwoShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(300px);
+            transform: translateY(300px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@keyframes cardTwoShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(300px);
+            transform: translateY(300px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@-webkit-keyframes cardThreeShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@keyframes cardThreeShow {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+@-webkit-keyframes workShow {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes workShow {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+.logo.animation {
+  -webkit-animation: logoShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 2);
+          animation: logoShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 2);
+}
+.about-section.animation .about-grids-left {
+  -webkit-animation: aboutLeftShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+          animation: aboutLeftShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+.about-section.animation .about-grids-right {
+  -webkit-animation: aboutRightShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+          animation: aboutRightShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+.grid.animation li:nth-child(1) {
+  -webkit-animation: gridOneShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+          animation: gridOneShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+.grid.animation li:nth-child(2) {
+  -webkit-animation: gridTwoShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+          animation: gridTwoShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+.grid.animation li:nth-child(3) {
+  -webkit-animation: gridThreeShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+          animation: gridThreeShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+.grid.animation li:nth-child(4) {
+  -webkit-animation: gridFourShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+          animation: gridFourShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+.service-section.animation .card1 {
+  -webkit-animation: cardOneShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+          animation: cardOneShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+.service-section.animation .card2 {
+  -webkit-animation: cardTwoShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+          animation: cardTwoShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+.service-section.animation .card3 {
+  -webkit-animation: cardThreeShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+          animation: cardThreeShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+.work-section.animation {
+  -webkit-animation: workShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 2);
+          animation: workShow 0.8s 1 cubic-bezier(0.74, 0.02, 0.46, 2);
+}
+/*# sourceMappingURL=./move.css.map */

@@ -1,0 +1,168 @@
+@keyframes logoShow {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes gridOneShow {
+    0% {
+        opacity: 0;
+        transform: translateX(-500px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes gridTwoShow {
+    0% {
+        opacity: 0;
+        transform: translateY(-500px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes gridThreeShow {
+    0% {
+        opacity: 0;
+        transform: translateY(500px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes gridFourShow {
+    0% {
+        opacity: 0;
+        transform: translateX(500px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes aboutLeftShow {
+    0% {
+        transform: translateX(1000px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes aboutRightShow {
+    0% {
+        transform: translateX(-1000px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes cardOneShow {
+    0% {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes cardTwoShow {
+    0% {
+        opacity: 0;
+        transform: translateY(300px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes cardThreeShow {
+    0% {
+        opacity: 0;
+        transform: translateX(300px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes workShow {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.logo.animation {
+    animation: logoShow .8s 1 cubic-bezier(0.74, 0.02, 0.46, 2);
+}
+
+.about-section.animation .about-grids-left {
+    animation: aboutLeftShow .8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+
+.about-section.animation .about-grids-right {
+    animation: aboutRightShow .8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+
+.grid.animation li:nth-child(1) {
+    animation: gridOneShow .8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+
+.grid.animation li:nth-child(2) {
+    animation: gridTwoShow .8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+
+.grid.animation li:nth-child(3) {
+    animation: gridThreeShow .8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+
+.grid.animation li:nth-child(4) {
+    animation: gridFourShow .8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+
+.service-section.animation .card1 {
+    animation: cardOneShow .8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+
+.service-section.animation .card2 {
+    animation: cardTwoShow .8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+
+.service-section.animation .card3 {
+    animation: cardThreeShow .8s 1 cubic-bezier(0.74, 0.02, 0.46, 1.5);
+}
+
+.work-section.animation {
+    animation: workShow .8s 1 cubic-bezier(0.74, 0.02, 0.46, 2);
+}
