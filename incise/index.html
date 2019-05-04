@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Incise</title>
+    <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
+<body>
+
+    <div id="main">
+
+        <div class="contain">
+
+            <div class="smallpic">
+                <div class="big"></div>
+            </div>
+            <div class="smallpic">
+                <div class="big"></div>
+            </div>
+            <div class="smallpic">
+                <div class="big"></div>
+            </div>
+            <div class="smallpic">
+                <div class="big"></div>
+            </div>
+            <div class="smallpic">
+                <div class="big"></div>
+            </div>
+            <div class="smallpic">
+                <div class="big"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script>
+        var main = document.querySelector('#main')
+        var contain = document.querySelector('.contain')
+        var bigPic = document.querySelectorAll('.big')
+
+        var inWidth = window.innerWidth //文档区域宽度
+        var containWidth = window.getComputedStyle(contain).width //contain的宽度
+        var containHeight = window.getComputedStyle(contain).height //contain的高度
+
+        var smallpicWidth = parseInt(containWidth) / 3 //小图片的宽度
+        var smallpicHeight = parseInt(containHeight) / 2 //小图片的高度
+
+        //第一个小图片距离四周的距离
+        var marginLeft = (inWidth - parseInt(containWidth)) / 2 
+        var marginTop = parseInt(window.getComputedStyle(main).marginTop)
+        var marginRight = marginLeft + (parseInt(containWidth) / 3)
+        var marginBottom = marginTop + (parseInt(containHeight) / 2)
+
+        //创建大图片里面的小图片格
+        for (var z = 0; z < bigPic.length; z++) {
+            for (var i = 0; i < 9; i++) {
+                div = document.createElement('div')
+                bigPic[z].appendChild(div)
+            }
+        }
+
+        function scaleChange(index, bigPicName, num) {
+            bigPic[index].style.transform = 'scale(' + num + ')'
+            bigPic[index].style.opacity = num
+
+            for (var x = 0; x < bigPicName.length; x++) {
+                bigPicName[x].style.transform = 'scale(' + num + ')'
+            }
+        }
+
+        main.addEventListener('mousemove', function (event) {  //添加鼠标移动事件
+            var mouseX = event.pageX;
+            var mouseY = event.pageY;
+
+            var mouseJudge = {
+                1: (mouseX > marginLeft && mouseY > marginTop && mouseX < marginRight && mouseY < marginBottom), //第一张图片显示  鼠标大于左侧  大于上侧  小于右侧  小于下侧
+                10: ((mouseX < marginLeft) || (mouseX > marginRight)) || ((mouseY < marginTop) || (mouseY > marginBottom)), //第一张图片隐藏  （鼠标小于左侧或大于右侧）或 （鼠标大于上侧或小于下侧）
+                2: mouseX > (marginLeft + smallpicWidth) && mouseY > marginTop && mouseX < (marginRight + smallpicWidth) && mouseY < marginBottom,  //第二张图片显示         
+                20: (mouseX < (marginLeft + smallpicWidth) || mouseX > (marginRight + smallpicWidth)) || (mouseY < marginTop || mouseY > marginBottom),  //第二张图片隐藏
+                3: mouseX > (marginLeft + (smallpicWidth * 2)) && mouseY > marginTop && mouseX < (marginRight + (smallpicWidth * 2)) && mouseY < marginBottom,
+                30: (mouseX < (marginLeft + (smallpicWidth * 2)) || mouseX > (marginRight + (smallpicWidth * 2))) || (mouseY < marginTop || mouseY > marginBottom),
+                4: mouseX > marginLeft && mouseY > (marginTop + smallpicHeight) && mouseX < marginRight && mouseY < (marginBottom + smallpicHeight),
+                40: (mouseX < marginLeft || mouseX > marginRight) || (mouseY < (marginTop + smallpicHeight) || mouseY > (marginBottom + smallpicHeight)),
+                5: mouseX > (marginLeft + smallpicWidth) && mouseY > (marginTop + smallpicHeight) && mouseX < (marginRight + smallpicWidth) && mouseY < (marginBottom + smallpicHeight),
+                50: (mouseX < (marginLeft + smallpicWidth) || mouseX > (marginRight + smallpicWidth)) || (mouseY < (marginTop + smallpicHeight) || mouseY > (marginBottom + smallpicHeight)),
+                6: mouseX > (marginLeft + (smallpicWidth * 2)) && mouseY > (marginTop + smallpicHeight) && mouseX < (marginRight + (smallpicWidth * 2)) && mouseY < (marginBottom + smallpicHeight),                    60: (mouseX < (marginLeft + (smallpicWidth * 2)) || mouseX > (marginRight + (smallpicWidth * 2))) || (mouseY < (marginTop + smallpicHeight) || mouseY > (marginBottom + smallpicHeight))
+            }
+
+            for (var x = 0; x < bigPic.length; x++) {
+                if (mouseJudge[x + 1]) {
+                    scaleChange(x, bigPic[x].querySelectorAll('div'), 1);
+                }
+                if (mouseJudge[(x + 1) * 10]) {
+                    scaleChange(x, bigPic[x].querySelectorAll('div'), 0);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

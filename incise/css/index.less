@@ -1,0 +1,211 @@
+body {
+    background: rgb(68, 68, 68);
+    box-sizing: border-box;
+}
+
+.bigstyle() {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 800px;
+    height: 600px;
+    background-size: 100% 100%;
+    // z-index: -1;
+    // opacity: 0.7;
+    transform: scale(0);
+    opacity: 0;
+    transition: all .4s;
+}
+
+.bigDivSyle() {
+    width: 33.33%;
+    height: 33.33%;
+    float: left;
+}
+
+.bigDivSyleNthChild() {
+    &:nth-child(1) {
+        background-position: 0 0;
+        transition: all .8s;
+    }
+
+    &:nth-child(2) {
+        background-position: -100% 0;
+        transition: all 0.6s;
+    }
+
+    &:nth-child(3) {
+        background-position: -200% 0;
+        transition: all .8s;
+    }
+
+    &:nth-child(4) {
+        background-position: 0 -100%;
+        transition: all 0.6s;
+    }
+
+    &:nth-child(5) {
+        background-position: -100% -100%;
+        transition: all 0.3s;
+    }
+
+    &:nth-child(6) {
+        background-position: -200% -100%;
+        transition: all 0.6s;
+    }
+
+    &:nth-child(7) {
+        background-position: 0 -200%;
+        transition: all .8s;
+    }
+
+    &:nth-child(8) {
+        background-position: -100% -200%;
+        transition: all 0.6s;
+    }
+
+    &:nth-child(9) {
+        background-position: -200% -200%;
+        transition: all .8s;
+    }
+}
+
+
+#main {
+    position: relative;
+    top: 0;
+    left: 0;
+    list-style: none;
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 100px;
+
+    .contain {
+        width: 50%;
+        min-width: 780px;
+        overflow: hidden;
+        margin: 0 auto;
+
+        .smallpic {
+            width: 33.33%;
+            height: 200px;
+            float: left;
+            background-size: 100% 100%;
+
+            &:nth-child(1) {
+                background-image: url(../img/a1.png);
+
+                .big {
+                    .bigstyle;
+
+                    div {
+                        .bigDivSyle;
+
+                        &:nth-child(n) {
+                            background-size: 300% 300%;
+                            background-image: url(../img/a1.png);
+                            transform: scale(0);
+                        }
+
+                        .bigDivSyleNthChild;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                background-image: url(../img/a2.png);
+
+                .big {
+                    .bigstyle;
+
+                    div {
+                        .bigDivSyle;
+
+                        &:nth-child(n) {
+                            background-size: 300% 300%;
+                            background-image: url(../img/a2.png);
+                        }
+
+                        .bigDivSyleNthChild;
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                background-image: url(../img/a3.png);
+
+                .big {
+                    .bigstyle;
+
+                    div {
+                        .bigDivSyle;
+
+                        &:nth-child(n) {
+                            background-size: 300% 300%;
+                            background-image: url(../img/a3.png);
+                        }
+
+                        .bigDivSyleNthChild;
+                    }
+                }
+            }
+
+            &:nth-child(4) {
+                background-image: url(../img/a4.png);
+
+                .big {
+                    .bigstyle;
+
+                    div {
+                        .bigDivSyle;
+
+                        &:nth-child(n) {
+                            background-size: 300% 300%;
+                            background-image: url(../img/a4.png);
+                        }
+
+                        .bigDivSyleNthChild;
+                    }
+                }
+            }
+
+            &:nth-child(5) {
+                background-image: url(../img/a5.png);
+
+                .big {
+                    .bigstyle;
+
+                    div {
+                        .bigDivSyle;
+
+                        &:nth-child(n) {
+                            background-size: 300% 300%;
+                            background-image: url(../img/a5.png);
+                        }
+
+                        .bigDivSyleNthChild;
+                    }
+                }
+            }
+
+            &:nth-child(6) {
+                background-image: url(../img/a6.png);
+
+                .big {
+                    .bigstyle;
+
+                    div {
+                        .bigDivSyle;
+
+                        &:nth-child(n) {
+                            background-size: 300% 300%;
+                            background-image: url(../img/a6.png);
+                        }
+
+                        .bigDivSyleNthChild;
+                    }
+                }
+            }
+        }
+    }
+}

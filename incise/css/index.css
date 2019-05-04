@@ -1,0 +1,449 @@
+body {
+  background: #444444;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+#main {
+  position: relative;
+  top: 0;
+  left: 0;
+  list-style: none;
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+#main .contain {
+  width: 50%;
+  min-width: 780px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+#main .contain .smallpic {
+  width: 33.33%;
+  height: 200px;
+  float: left;
+  background-size: 100% 100%;
+}
+#main .contain .smallpic:nth-child(1) {
+  background-image: url(../img/a1.png);
+}
+#main .contain .smallpic:nth-child(1) .big {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 800px;
+  height: 600px;
+  background-size: 100% 100%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+#main .contain .smallpic:nth-child(1) .big div {
+  width: 33.33%;
+  height: 33.33%;
+  float: left;
+}
+#main .contain .smallpic:nth-child(1) .big div:nth-child(n) {
+  background-size: 300% 300%;
+  background-image: url(../img/a1.png);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+#main .contain .smallpic:nth-child(1) .big div:nth-child(1) {
+  background-position: 0 0;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(1) .big div:nth-child(2) {
+  background-position: -100% 0;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(1) .big div:nth-child(3) {
+  background-position: -200% 0;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(1) .big div:nth-child(4) {
+  background-position: 0 -100%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(1) .big div:nth-child(5) {
+  background-position: -100% -100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#main .contain .smallpic:nth-child(1) .big div:nth-child(6) {
+  background-position: -200% -100%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(1) .big div:nth-child(7) {
+  background-position: 0 -200%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(1) .big div:nth-child(8) {
+  background-position: -100% -200%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(1) .big div:nth-child(9) {
+  background-position: -200% -200%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(2) {
+  background-image: url(../img/a2.png);
+}
+#main .contain .smallpic:nth-child(2) .big {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 800px;
+  height: 600px;
+  background-size: 100% 100%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+#main .contain .smallpic:nth-child(2) .big div {
+  width: 33.33%;
+  height: 33.33%;
+  float: left;
+}
+#main .contain .smallpic:nth-child(2) .big div:nth-child(n) {
+  background-size: 300% 300%;
+  background-image: url(../img/a2.png);
+}
+#main .contain .smallpic:nth-child(2) .big div:nth-child(1) {
+  background-position: 0 0;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(2) .big div:nth-child(2) {
+  background-position: -100% 0;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(2) .big div:nth-child(3) {
+  background-position: -200% 0;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(2) .big div:nth-child(4) {
+  background-position: 0 -100%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(2) .big div:nth-child(5) {
+  background-position: -100% -100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#main .contain .smallpic:nth-child(2) .big div:nth-child(6) {
+  background-position: -200% -100%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(2) .big div:nth-child(7) {
+  background-position: 0 -200%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(2) .big div:nth-child(8) {
+  background-position: -100% -200%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(2) .big div:nth-child(9) {
+  background-position: -200% -200%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(3) {
+  background-image: url(../img/a3.png);
+}
+#main .contain .smallpic:nth-child(3) .big {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 800px;
+  height: 600px;
+  background-size: 100% 100%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+#main .contain .smallpic:nth-child(3) .big div {
+  width: 33.33%;
+  height: 33.33%;
+  float: left;
+}
+#main .contain .smallpic:nth-child(3) .big div:nth-child(n) {
+  background-size: 300% 300%;
+  background-image: url(../img/a3.png);
+}
+#main .contain .smallpic:nth-child(3) .big div:nth-child(1) {
+  background-position: 0 0;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(3) .big div:nth-child(2) {
+  background-position: -100% 0;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(3) .big div:nth-child(3) {
+  background-position: -200% 0;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(3) .big div:nth-child(4) {
+  background-position: 0 -100%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(3) .big div:nth-child(5) {
+  background-position: -100% -100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#main .contain .smallpic:nth-child(3) .big div:nth-child(6) {
+  background-position: -200% -100%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(3) .big div:nth-child(7) {
+  background-position: 0 -200%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(3) .big div:nth-child(8) {
+  background-position: -100% -200%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(3) .big div:nth-child(9) {
+  background-position: -200% -200%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(4) {
+  background-image: url(../img/a4.png);
+}
+#main .contain .smallpic:nth-child(4) .big {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 800px;
+  height: 600px;
+  background-size: 100% 100%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+#main .contain .smallpic:nth-child(4) .big div {
+  width: 33.33%;
+  height: 33.33%;
+  float: left;
+}
+#main .contain .smallpic:nth-child(4) .big div:nth-child(n) {
+  background-size: 300% 300%;
+  background-image: url(../img/a4.png);
+}
+#main .contain .smallpic:nth-child(4) .big div:nth-child(1) {
+  background-position: 0 0;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(4) .big div:nth-child(2) {
+  background-position: -100% 0;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(4) .big div:nth-child(3) {
+  background-position: -200% 0;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(4) .big div:nth-child(4) {
+  background-position: 0 -100%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(4) .big div:nth-child(5) {
+  background-position: -100% -100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#main .contain .smallpic:nth-child(4) .big div:nth-child(6) {
+  background-position: -200% -100%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(4) .big div:nth-child(7) {
+  background-position: 0 -200%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(4) .big div:nth-child(8) {
+  background-position: -100% -200%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(4) .big div:nth-child(9) {
+  background-position: -200% -200%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(5) {
+  background-image: url(../img/a5.png);
+}
+#main .contain .smallpic:nth-child(5) .big {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 800px;
+  height: 600px;
+  background-size: 100% 100%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+#main .contain .smallpic:nth-child(5) .big div {
+  width: 33.33%;
+  height: 33.33%;
+  float: left;
+}
+#main .contain .smallpic:nth-child(5) .big div:nth-child(n) {
+  background-size: 300% 300%;
+  background-image: url(../img/a5.png);
+}
+#main .contain .smallpic:nth-child(5) .big div:nth-child(1) {
+  background-position: 0 0;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(5) .big div:nth-child(2) {
+  background-position: -100% 0;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(5) .big div:nth-child(3) {
+  background-position: -200% 0;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(5) .big div:nth-child(4) {
+  background-position: 0 -100%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(5) .big div:nth-child(5) {
+  background-position: -100% -100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#main .contain .smallpic:nth-child(5) .big div:nth-child(6) {
+  background-position: -200% -100%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(5) .big div:nth-child(7) {
+  background-position: 0 -200%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(5) .big div:nth-child(8) {
+  background-position: -100% -200%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(5) .big div:nth-child(9) {
+  background-position: -200% -200%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(6) {
+  background-image: url(../img/a6.png);
+}
+#main .contain .smallpic:nth-child(6) .big {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 800px;
+  height: 600px;
+  background-size: 100% 100%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+#main .contain .smallpic:nth-child(6) .big div {
+  width: 33.33%;
+  height: 33.33%;
+  float: left;
+}
+#main .contain .smallpic:nth-child(6) .big div:nth-child(n) {
+  background-size: 300% 300%;
+  background-image: url(../img/a6.png);
+}
+#main .contain .smallpic:nth-child(6) .big div:nth-child(1) {
+  background-position: 0 0;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(6) .big div:nth-child(2) {
+  background-position: -100% 0;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(6) .big div:nth-child(3) {
+  background-position: -200% 0;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(6) .big div:nth-child(4) {
+  background-position: 0 -100%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(6) .big div:nth-child(5) {
+  background-position: -100% -100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#main .contain .smallpic:nth-child(6) .big div:nth-child(6) {
+  background-position: -200% -100%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(6) .big div:nth-child(7) {
+  background-position: 0 -200%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+#main .contain .smallpic:nth-child(6) .big div:nth-child(8) {
+  background-position: -100% -200%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+}
+#main .contain .smallpic:nth-child(6) .big div:nth-child(9) {
+  background-position: -200% -200%;
+  -webkit-transition: all .8s;
+  transition: all .8s;
+}
+/*# sourceMappingURL=./index.css.map */
