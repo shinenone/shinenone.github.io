@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>贪吃蛇</title>
+</head>
+
+<body>
+    <audio src="./bg.wav" id="bgmusic" autoplay loop></audio>
+    <div class="content">
+        <canvas id="stage" width="300px" height="400px"></canvas>
+
+        <p class="score">0</p>
+    </div>
+
+
+    <style>
+        #stage {
+            border: 1px solid lightsalmon;
+            background: rgba(173, 216, 230, 0.6);
+        }
+
+        .content {
+            width: 300px;
+            height: auto;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .score {
+            /* line-height: 25px; */
+            text-align: center;
+            position: absolute;
+            bottom: 7px;
+            right: 3px;
+            margin: 0px;
+            padding: 1px 10px;
+            border: 1px solid rgba(255, 0, 0, 0.4);
+            border-radius: 35%;
+        }
+    </style>
+
+    <script>
+        /** @type {HTMLCanvasElement} */
+
+        window.onload = () => {
+            let stage = document.querySelector('#stage')
+            let oScore = document.querySelector('.score')
+            let blockSize = 10; //坐标块尺寸
+
+            let stageWidth = stage.offsetWidth
+            let stageHeight = stage.offsetHeight
+            let blocksWidth = parseInt(window.getComputedStyle(stage).width) / blockSize; //stage的x轴有多少个坐标块
+            let blocksHeight = parseInt(window.getComputedStyle(stage).height) / blockSize;
+
+            let gameOver = false;
+            let score = 0;
+            let ctx = stage.getContext('2d')
+
+
+            // 个块的构造函数
+            class Block {
+                constructor(col, row) {
+                    this.col = col
+                    this.row = row
+                }
+
+                draw(color) {
+                    // 开始路径
+                    ctx.beginPath()
+                    ctx.fillStyle = color
+                    ctx.fillRect(this.col * 10, this.row * 10, 10, 10)
+                    // ctx.arc(this.col * 10, this.row * 10, 5, 0, 2 * Math.PI)
+                    ctx.fill()
+                }
+            }
+
+            // 蛇的构造函数
+            class Snake {
+                constructor() {
+                    this.segments = [
+                        new Block(3, 1),
+                        new Block(2, 1),
+                        new Block(1, 1)
+                    ]
+                    this.direction = 'right' //一开始的方向
+                    this.nextDirection = 'right'  //下一次方向
+                    this.speed = 10;
+                }
+
+                draw() {
+                    ctx.clearRect(0, 0, stageWidth, stageHeight)
+
+                    this.segments.forEach((element, index) => {
+                        if (index == 0) {
+                            element.draw('black')
+                        } else {
+                            element.draw('blue')
+                        }
+                    });
+
+                    apple.draw()
+                }
+
+                move() {
+                    this.direction = this.nextDirection
+
+                    let oldHead = this.segments[0]
+                    //清画布
+
+                    this.newHead;
+
+                    switch (this.direction) {
+                        case 'right':
+                            this.newHead = new Block(oldHead.col + 1, oldHead.row)
+                            break;
+                        case 'left':
+                            this.newHead = new Block(oldHead.col - 1, oldHead.row)
+                            break
+                        case 'down':
+                            this.newHead = new Block(oldHead.col, oldHead.row + 1)
+                            break
+                        case 'up':
+                            this.newHead = new Block(oldHead.col, oldHead.row - 1)
+                            break
+                    }
+                    // 向数组添加蛇头
+                    this.segments.unshift(this.newHead)
+
+                    if (this.newHead.col === apple.segment.col && this.newHead.row === apple.segment.row) {
+                        apple.music()
+                        apple.move()
+                        apple.draw()
+                    } else {
+                        // 移出数组最后一项
+                        this.tail = this.segments.pop()
+
+                    }
+                }
+
+                setDirection(newDirection) {
+                    if (this.direction === 'right' && newDirection === 'left') {
+                        return
+                    }
+                    if (this.direction === 'left' && newDirection === 'right') {
+                        return
+                    }
+                    if (this.direction === 'up' && newDirection === 'down') {
+                        return
+                    }
+                    if (this.direction === 'down' && newDirection === 'up') {
+                        return
+                    }
+                    this.nextDirection = newDirection
+                }
+
+                checkCollision() {
+                    // console.log(oldHead.col)
+                    //撞墙
+                    var rightCollision = this.newHead.col + 1 > blocksWidth
+                    var leftCollision = this.newHead.col + 1 <= 0
+                    var downCollision = this.newHead.row + 1 > blocksHeight
+                    var topCollision = this.newHead.row + 1 <= 0
+
+                    var selfCollision = false
+
+                    //忽略蛇头 因为蛇头就是从newHead 生成出来的
+                    for (var i = 1; i < this.segments.length; i++) {
+                        //自身碰撞检查
+                        if (this.newHead.col === this.segments[i].col && this.newHead.row === this.segments[i].row) {
+                            selfCollision = true;
+                        }
+                    }
+
+                    if (rightCollision || leftCollision || downCollision || topCollision || selfCollision) {
+                        gameOver = true;
+                        clearInterval(sID) //清除周期函数
+                        document.querySelector('body').removeChild(document.getElementById("bgmusic"))
+                        alert('Game over!')
+                    }
+                }
+            }
+
+            // 苹果的构造函数
+            class Apple {
+                constructor() {
+                    this.x = Math.ceil(Math.random() * blocksWidth - 1)
+                    this.y = Math.ceil(Math.random() * blocksHeight - 1)
+
+                    this.segment = new Block(this.x, this.y)
+                }
+
+                draw() {
+                    this.segment.draw('red')
+                }
+
+                move() {
+                    let randomCol
+                    let randomRow
+
+                    do {
+                        var needReHenerate = false
+
+                        randomCol = Math.ceil(Math.random() * blocksWidth - 1)
+                        randomRow = Math.ceil(Math.random() * blocksHeight - 1)
+
+                        snake.segments.forEach(function (element) {
+                            if (element.col === randomCol && element.row === randomRow) {
+                                needReHenerate = true
+                            }
+                        })
+                    } while (needReHenerate)
+
+                    // console.log('清');
+                    this.segment = new Block(randomCol, randomRow)
+
+                    score++
+                    oScore.innerText = score;
+                }
+
+                music() {
+                    this.node = document.createElement('audio')
+                    this.node.src = './7618.mp3'
+                    this.node.className = 'music'
+                    this.node.onended = endFun
+
+                    document.querySelector('body').appendChild(this.node)
+                    this.node.play()
+                }
+            }
+
+            let endFun = () => {
+                document.querySelector('body').removeChild(document.getElementsByClassName("music")[0])
+            }
+
+            // 键值
+            let directions = {
+                37: 'left',
+                38: 'up',
+                39: 'right',
+                40: 'down'
+            }
+
+            window.addEventListener('keydown', (e) => {
+                snake.setDirection(directions[e.keyCode])
+            })
+
+            let apple = new Apple()
+            let snake = new Snake()
+            snake.draw()
+
+            let sID = setInterval(() => {
+
+                snake.move()
+                snake.checkCollision()
+                apple.draw()
+
+                // console.log(gameOver);
+                if (gameOver) {
+                    return
+                }
+                snake.draw()
+            }, 200);
+        }
+
+
+
+    </script>
+</body>
+
+</html>
