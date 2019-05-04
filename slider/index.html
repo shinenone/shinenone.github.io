@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slider</title>
+    <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <link rel="stylesheet" href="./css/seamless-slider.css">
+</head>
+
+<body>
+    <div class="slider">
+        <ul class="slider-content">
+            <li title="1"><img src="./img/s1.jpg" alt=""><span>one</span></li>
+            <li title="2"><img src="./img/s2.jpg" alt=""><span>two</span></li>
+            <li title="3"><img src="./img/s3.jpg" alt=""><span>three</span></li>
+            <li title="4"><img src="./img/s4.jpg" alt=""><span>four</span></li>
+            <li title="5"><img src="./img/s5.jpg" alt=""><span>five</span></li>
+        </ul>
+        <div class="slider-cut">
+            <button class="slider-prev"><i class="fa fa-chevron-left"></i></button>
+            <button class="slider-next"><i class="fa fa-chevron-right"></i></button>
+        </div>
+        <div class="slider-pagination"></div>
+    </div>
+
+
+    <script>
+        var $lis = $('.slider-content li') // 存储最初的排列
+        var canClick = true;
+
+        // 根据轮播图li的个数生成多少个跳转按钮
+        $.each($('.slider-content li'), function () {
+            $('.slider-pagination').append('<i></i>')
+        });
+
+        // 所有小按钮
+        var $points = $('.slider-pagination i')
+
+        // 按钮高亮函数
+        function activePoint(index) {
+            $('.slider-pagination i').eq(index).addClass('active').siblings().removeClass('active')
+        }
+
+        // 首个按钮高亮
+        activePoint(0)
+
+        //把最后一张图片移到最前面
+        $('.slider-content li').last().prependTo('.slider-content')
+
+        // 需要展示的图片跟列表第一张图片不相等时        
+        function unLikeness(imminentIndex) {
+            if ($lis.eq(imminentIndex)[0] != $('.slider-content li').first()[0]) {
+                // 把需要展示的图片塞到列表第二个的前面
+                $lis.eq(imminentIndex).insertBefore($('.slider-content li').eq(1))
+                // 把列表第一个扔到最后面
+                $('.slider-content li').first().appendTo('.slider-content')
+            }
+        }
+
+        // 需要展示的图片跟列表第一张图片相等时
+        function Likeness(imminentIndex) {
+            if ($lis.eq(imminentIndex)[0] == $('.slider-content li').first()[0]) {
+                $lis.eq(imminentIndex).insertAfter($('.slider-content li').eq(1))
+                // 把最后一个放到第一项
+                $('.slider-content li').last().prependTo('.slider-content')
+            } else {
+                $lis.eq(imminentIndex).insertAfter($('.slider-content li').eq(1))
+            }
+        }
+
+        // 变换上一张函数
+        function prevPic() {
+            $('.slider-content').animate({
+                'margin-left': '0px'
+            }, 1000, 'linear', function () {
+                $(this).css({
+                    'margin-left': '-500px'
+                }).children().last().prependTo($('.slider-content')) //把最后列表最后一项放到第一项
+                canClick = true
+            })
+        }
+
+        // 变换下一张函数
+        function nextPic() {
+            $('.slider-content').animate({ // 自定义动画
+                'margin-left': '-=500px' //加后等于
+            }, 1000, 'linear', function () {
+                // 回调函数
+                // console.log($(this));
+                $(this).css({
+                    'margin-left': '-500px'
+                }).children().first().appendTo('.slider-content') //把第一个放到最后一个
+                canClick = true;
+            })
+        }
+
+        //上一张点击事件函数
+        $('.slider-prev').click(function () {
+            if (canClick) {
+                canClick = false
+                // 现在的索引
+                var cunrrentIndex = $lis.index($('.slider-content li').eq(1))
+                // 上一张的索引
+                var imminentIndex = cunrrentIndex - 1;
+                if (imminentIndex < 0) {
+                    imminentIndex = $lis.length - 1
+                }
+                unLikeness(imminentIndex)
+                prevPic()
+                activePoint(imminentIndex)
+
+            }
+        });
+
+        // 下一张点击事件
+        $('.slider-next').click(function () {
+            if (canClick) {
+                canClick = false;
+                // 现在的索引
+                var cunrrentIndex = $lis.index($('.slider-content li').eq(1))
+                // 下一张图片的索引
+                var imminentIndex = cunrrentIndex + 1;
+                if (imminentIndex > $lis.length - 1) {
+                    imminentIndex = 0;
+                }
+                Likeness(imminentIndex)
+                nextPic()
+                activePoint(imminentIndex)
+            }
+        });
+
+        function showPic(imminentIndex) {
+            // console.log(imminentIndex);
+            var cunrrentIndex = $lis.index($('.slider-content li').eq(1))
+            // console.log(cunrrentIndex);
+
+            // 判断即将显示的图片的索引比现在展示的图片索引
+            // 如果需要现在 > 显示  切换上一张函数
+            if (cunrrentIndex > imminentIndex) {
+                //判断需要移动的图片是不是列表第一项
+                unLikeness(imminentIndex)
+                prevPic()
+            }
+
+            // 如果需要现在 < 显示  切换下一张函数
+            if (cunrrentIndex < imminentIndex) {
+                //判断需要移动的图片是不是列表第一个
+                Likeness(imminentIndex)
+                nextPic()
+            }
+        }
+
+        $points.click(function () {
+            if (canClick) {
+                canClick = false
+                showPic($(this).index())
+                activePoint($(this).index())
+            }
+        });
+    </script>
+</body>
+
+</html>
