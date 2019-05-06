@@ -1,0 +1,346 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.stage {
+  background: lightblue;
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-pack: center;
+     -moz-box-pack: center;
+          justify-content: center;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 3000px;
+          perspective: 3000px;
+}
+.stage .card {
+  width: 400px;
+  height: 550px;
+  margin-top: 50px;
+  border-radius: 15px;
+  background: url('../img/600x600.jpg') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transition: cubic-bezier(0.54, 0.01, 0.6, 1.15) 0.5s;
+  transition: cubic-bezier(0.54, 0.01, 0.6, 1.15) 0.5s;
+  -webkit-transform: rotateX(0deg) translateZ(250px);
+          transform: rotateX(0deg) translateZ(250px);
+  -webkit-transform-origin: center center 400px;
+          transform-origin: center center 400px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  text-align: center;
+  box-shadow: 0 0 20px 5px rgba(6, 71, 103, 0.2);
+  -webkit-perspective: 1500px;
+          perspective: 1500px;
+}
+.stage .card::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  -webkit-transition: inherit;
+  transition: inherit;
+  background: rgba(69, 69, 202, 0.2);
+}
+.stage .card::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  -webkit-transition: inherit;
+  transition: inherit;
+  background: #222;
+  -webkit-transform: translateZ(-25px);
+          transform: translateZ(-25px);
+}
+.stage .card.active {
+  -webkit-transform: rotateX(60deg) translateZ(250px);
+          transform: rotateX(60deg) translateZ(250px);
+  margin-top: 50px;
+}
+.stage .card.active::before {
+  background: rgba(29, 29, 111, 0.6);
+}
+.stage .card.active::after {
+  -webkit-transform: translateZ(-20px);
+          transform: translateZ(-20px);
+  box-shadow: 0 0 30px 20px rgba(0, 0, 0, 0.3);
+}
+.stage .card > * {
+  margin: 0;
+  width: 100%;
+  color: white;
+}
+.stage .card .chart {
+  display: -webkit-box;
+  display: -moz-box;
+  display: flex;
+  -webkit-box-pack: center;
+     -moz-box-pack: center;
+          justify-content: center;
+  margin-bottom: 30px;
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+.stage .card .chart .bar {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+.stage .card .chart .bar::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 25px;
+  background: #ddf1f9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgba(0, 0, 0, 0.1);
+  text-align: right;
+  -webkit-transition: inherit;
+  transition: inherit;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: rotateX(-90deg) rotateZ(-90deg) translateX(0) translateY(12.5px) translateZ(12.5px);
+          transform: rotateX(-90deg) rotateZ(-90deg) translateX(0) translateY(12.5px) translateZ(12.5px);
+}
+.stage .card .chart .bar::after {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 25px;
+  background: #7dafc2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: rotateY(-90deg) translateZ(-25px);
+          transform: rotateY(-90deg) translateZ(-25px);
+}
+.stage .card .chart .bar div {
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+  color: white;
+  font-size: 12px;
+  line-height: 25px;
+  text-align: center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+.stage .card h1 {
+  -webkit-transform: translateZ(20px);
+          transform: translateZ(20px);
+  font-weight: 400;
+  margin-bottom: 10px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+.stage .card p {
+  -webkit-transform: translateZ(20px);
+          transform: translateZ(20px);
+  margin-bottom: 20px;
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+.stage .card h3 {
+  font-size: 32px;
+  font-weight: 500;
+  -webkit-transform: translateZ(10px);
+          transform: translateZ(10px);
+  position: relative;
+  top: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+.stage .card.active h1,
+.stage .card.active p {
+  -webkit-transform: translateZ(80px);
+          transform: translateZ(80px);
+  opacity: 0;
+  visibility: hidden;
+}
+.stage .card.active h3 {
+  top: 20px;
+  -webkit-transform: translateZ(40px);
+          transform: translateZ(40px);
+}
+.stage .card.active .chart .bar.bar1 div {
+  -webkit-transform: translateZ(200px);
+          transform: translateZ(200px);
+  color: black;
+}
+.stage .card.active .chart .bar.bar1::before {
+  content: '20,000';
+  color: #000000;
+  font-size: 12px;
+  line-height: 25px;
+  width: 200px;
+}
+.stage .card.active .chart .bar.bar1::after {
+  content: '';
+  color: #000000;
+  font-size: 12px;
+  line-height: 25px;
+  width: 200px;
+}
+.stage .card.active .chart .bar.bar2 div {
+  -webkit-transform: translateZ(100px);
+          transform: translateZ(100px);
+  color: black;
+}
+.stage .card.active .chart .bar.bar2::before {
+  content: '10,000';
+  color: #000000;
+  font-size: 12px;
+  line-height: 25px;
+  width: 100px;
+}
+.stage .card.active .chart .bar.bar2::after {
+  content: '';
+  color: #000000;
+  font-size: 12px;
+  line-height: 25px;
+  width: 100px;
+}
+.stage .card.active .chart .bar.bar3 div {
+  -webkit-transform: translateZ(150px);
+          transform: translateZ(150px);
+  color: black;
+}
+.stage .card.active .chart .bar.bar3::before {
+  content: '15,000';
+  color: #000000;
+  font-size: 12px;
+  line-height: 25px;
+  width: 150px;
+}
+.stage .card.active .chart .bar.bar3::after {
+  content: '';
+  color: #000000;
+  font-size: 12px;
+  line-height: 25px;
+  width: 150px;
+}
+.stage .card.active .chart .bar.bar4 div {
+  -webkit-transform: translateZ(240px);
+          transform: translateZ(240px);
+  color: black;
+}
+.stage .card.active .chart .bar.bar4::before {
+  content: '24,000';
+  color: #000000;
+  font-size: 12px;
+  line-height: 25px;
+  width: 240px;
+}
+.stage .card.active .chart .bar.bar4::after {
+  content: '';
+  color: #000000;
+  font-size: 12px;
+  line-height: 25px;
+  width: 240px;
+}
+.stage .card.active .chart .bar.bar5 div {
+  -webkit-transform: translateZ(70px);
+          transform: translateZ(70px);
+  color: black;
+}
+.stage .card.active .chart .bar.bar5::before {
+  content: '7,000';
+  color: #000000;
+  font-size: 12px;
+  line-height: 25px;
+  width: 70px;
+}
+.stage .card.active .chart .bar.bar5::after {
+  content: '';
+  color: #000000;
+  font-size: 12px;
+  line-height: 25px;
+  width: 70px;
+}
+.stage .card.active .chart .bar.bar6 div {
+  -webkit-transform: translateZ(70px);
+          transform: translateZ(70px);
+  color: black;
+}
+.stage .card.active .chart .bar.bar6::before {
+  content: '7,000';
+  color: #000000;
+  font-size: 12px;
+  line-height: 25px;
+  width: 70px;
+}
+.stage .card.active .chart .bar.bar6::after {
+  content: '';
+  color: #000000;
+  font-size: 12px;
+  line-height: 25px;
+  width: 70px;
+}
+.stage .card.active .chart .bar.bar7 div {
+  -webkit-transform: translateZ(100px);
+          transform: translateZ(100px);
+  color: black;
+}
+.stage .card.active .chart .bar.bar7::before {
+  content: '10,000';
+  color: #000000;
+  font-size: 12px;
+  line-height: 25px;
+  width: 100px;
+}
+.stage .card.active .chart .bar.bar7::after {
+  content: '';
+  color: #000000;
+  font-size: 12px;
+  line-height: 25px;
+  width: 100px;
+}
+/*# sourceMappingURL=./main.css.map */

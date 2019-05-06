@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="stage">
+        <div class="card">
+            <h1>STEPS</h1>
+            <p>THIS WEEK</p>
+            <div class="chart">
+                <span class="bar bar1"><div>M</div></span>
+                <span class="bar bar2"><div>T</div></span>
+                <span class="bar bar3"><div>W</div></span>
+                <span class="bar bar4"><div>T</div></span>
+                <span class="bar bar5"><div>F</div></span>
+                <span class="bar bar6"><div>S</div></span>
+                <span class="bar bar7"><div>S</div></span>
+
+            </div>
+            <h3>93,000</h3>
+        </div>
+    </div>
+
+
+    <script>
+        $('.stage').on('click', function () {
+            if ($('.card')[0].className.indexOf('active') === -1) {
+                $('.card').addClass('active')
+            } else {
+                $('.card').removeClass('active')
+            }
+        });
+    </script>
+</body>
+
+</html>
