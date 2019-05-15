@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script src="./js/jquery.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+
+<body>
+
+    <ul id="list">
+        <li id="drag1" draggable="true" ondragstart="drag(event)" ondragover="dragover(event)" ondrop="drop(event)">111
+        </li>
+        <li id="drag2" draggable="true" ondragstart="drag(event)" ondragover="dragover(event)" ondrop="drop(event)">222
+        </li>
+        <li id="drag3" draggable="true" ondragstart="drag(event)" ondragover="dragover(event)" ondrop="drop(event)">333
+        </li>
+        <li id="drag4" draggable="true" ondragstart="drag(event)" ondragover="dragover(event)" ondrop="drop(event)">444
+        </li>
+        <li id="drag5" draggable="true" ondragstart="drag(event)" ondragover="dragover(event)" ondrop="drop(event)">555
+        </li>
+
+    </ul>
+
+    <style>
+        ul,
+        li {
+            margin: 10px;
+            padding: 0;
+        }
+
+        ul {
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.25);
+        }
+
+        li {
+            list-style: none;
+            background: lightblue;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        li:active {
+            background: lightcoral;
+        }
+    </style>
+
+    <script>
+        var uls = $('#list')[0]
+
+        function drag(event) {
+            event.dataTransfer.setData('text/plain', event.target.id);
+        }
+
+        function dragover(event) {
+            event.preventDefault();
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            var data = event.dataTransfer.getData('text/plain');
+
+            // 得到应该防置在哪行的索引
+            var i = $('#' + event.target.id).index();
+
+
+            uls.insertBefore($('#'+data)[0], uls.childNodes[0]);
+
+            for (let x = i; x > 0; x--) {
+                // console.log('现在的x：'+x);
+                uls.insertBefore($('ul li').eq(i)[0], uls.childNodes[0]);
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>

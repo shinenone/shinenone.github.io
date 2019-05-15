@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="card">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </div>
+    </div>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #main {
+            background: #151515;
+            box-sizing: border-box;
+            margin-top: 50px;
+        }
+
+        #card {
+            position: relative;
+            height: 400px;
+            width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        li {
+            position: absolute;
+            top: 0;
+            list-style: none;
+            height: 400px;
+            width: 700px;
+            transition: all 1s;
+            box-sizing: border-box;
+            border: 7px solid rgb(173, 173, 173);
+            background-size: 700px 400px;
+            background-repeat: no-repeat;
+        }
+
+        li:nth-child(1) {
+            background: url(img/thumb-23.jpg);
+            background-repeat: no-repeat;
+            background-size: 700px 400px;
+            left: 0;
+        }
+
+        li:nth-child(2) {
+            background: url(img/thumb-22-688x230.jpg);
+            background-repeat: no-repeat;
+            background-size: 700px 400px;
+            left: 250px;
+        }
+
+        li:nth-child(3) {
+            background: url(img/thumb-21.jpg);
+            background-repeat: no-repeat;
+            background-size: 700px 400px;
+            left: 500px;
+        }
+
+        li:nth-child(4) {
+            background: url(img/thumb-20.jpg);
+            background-repeat: no-repeat;
+            background-size: 700px 400px;
+            left: 750px;
+        }
+    </style>
+
+    <script>
+        var lis = $('#card li')
+
+        lis.on('mouseover', function () {
+            console.log('xxx');
+
+            for (var i = 0; i < lis.length; i++) {
+
+                if (i > lis.index(this)) {
+                    lis.eq(i).css({
+                        'left': 100 * (i - 1) + 700 + 'px'
+                    })
+                } else {
+                    lis.eq(i).css({
+                        'left': 100 * i + 'px'
+                    })
+                }
+            }
+        });
+        lis.on('mouseout', function () {
+            for (var i = 0; i < lis.length; i++) {
+                lis.eq(i).css({
+                    'left': 250 * i + 'px'
+                })
+            }
+        });
+    </script>
+</body>
+
+</html>

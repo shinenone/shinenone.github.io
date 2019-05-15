@@ -1,0 +1,80 @@
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.slider {
+  margin: 50px auto;
+  width: 800px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  border: 5px solid #969696;
+  -webkit-transition: all .7s;
+  transition: all .7s;
+}
+.slider button {
+  position: absolute;
+  padding: 0;
+  top: 250px;
+  margin-top: -20px;
+  width: 60px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.slider .btn-left {
+  left: -60px;
+}
+.slider .btn-right {
+  right: -60px;
+}
+.slider:hover .btn-left {
+  left: 0px;
+}
+.slider:hover .btn-right {
+  right: 0px;
+}
+.slider ul {
+  width: 4000px;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+.slider ul li {
+  height: 500px;
+  width: 800px;
+  margin: 0 auto;
+  list-style: none;
+  position: absolute;
+}
+.slider ul li:nth-child(1) {
+  background: url(../img/gta-1.jpg);
+  background-size: 100% 100%;
+  left: 0;
+}
+.slider ul li:nth-child(2) {
+  background: url(../img/gta-2.jpg);
+  background-size: 100% 100%;
+  left: 800px;
+}
+.slider ul li:nth-child(3) {
+  background: url(../img/gta-3.jpg);
+  background-size: 100% 100%;
+  left: 1600px;
+}
+.slider ul li:nth-child(4) {
+  background: url(../img/gta-4.jpg);
+  background-size: 100% 100%;
+  left: 2400px;
+}
+.slider ul li:nth-child(5) {
+  background: url(../img/gta-5.jpg);
+  background-size: 100% 100%;
+  left: 3200px;
+}
+/*# sourceMappingURL=./main.css.map */

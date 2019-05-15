@@ -1,0 +1,129 @@
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+button {
+    padding: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-judge() {
+    .posa;
+    top: 50%;
+    margin-top: -18px;
+    background: none;
+}
+
+.posa() {
+    position: absolute;
+}
+
+.pic() {
+    background-size: 100% 100%;
+}
+
+.slider {
+    margin: 50px auto;
+    width: 800px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    // border: 5px solid rgb(150, 150, 150);
+    transition: all .7s;
+
+    button {
+        i {
+            font-size: 36px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    }
+
+    .btn-left {
+        .btn-judge;
+        left: 20px;
+    }
+
+    .btn-right {
+        .btn-judge;
+        right: 20px;
+
+    }
+
+    &:hover {
+        background: red;
+    }
+
+    ul {
+        width: 4000px;
+        height: 500px;
+        overflow: hidden;
+        position: relative;
+        transition: all 1s;
+
+        li {
+            height: 500px;
+            width: 800px;
+            margin: 0 auto;
+            list-style: none;
+            .posa;
+
+            &:nth-child(1) {
+                background: url(../img/gta-1.jpg);
+                .pic;
+                left: 0;
+            }
+
+            &:nth-child(2) {
+                background: url(../img/gta-2.jpg);
+                .pic;
+                left: 800px;
+            }
+
+            &:nth-child(3) {
+                background: url(../img/gta-3.jpg);
+                .pic;
+                left: 1600px;
+            }
+
+            &:nth-child(4) {
+                background: url(../img/gta-4.jpg);
+                .pic;
+                left: 2400px;
+            }
+
+            &:nth-child(5) {
+                background: url(../img/gta-5.jpg);
+                .pic;
+                left: 3200px;
+            }
+        }
+    }
+
+    .skip {
+        .posa;
+        bottom: 15px;
+        left: 50%;
+        margin-left: -250px;
+        width: 500px;
+        text-align: center;
+
+        button {
+            margin-left: 8px;
+            height: 7px;
+            width: 45px;
+            background: rgba(255, 255, 255, 0.3);
+
+            &:hover {
+                transition: all .6s;
+                background: rgba(255, 255, 255, 0.8);
+            }
+        }
+        .active {
+            background: rgba(255, 255, 255, 0.8);
+        }
+    }
+}

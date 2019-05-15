@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="" method="">
+        <input type="number">
+        <input type="button" value="开始">
+    </form>
+    <div class="result"></div>
+    <canvas width="300" height="300" style="border: 1px solid red"></canvas>
+
+    <script>
+        var w;
+        w = new Worker('demo_workers.js')
+
+        document.querySelector('input[type=button]').onclick = function () {
+            var num = document.querySelector('input[type=number]').value
+            // console.log(num)
+            w.postMessage(num)
+        }
+        w.onmessage = function (event) {
+            // console.log('yunsuan');
+            document.querySelector('.result').innerHTML = event.data;
+        }
+    </script>
+
+    <script>
+        // @type {HTMLCanvasElement}
+        var canvas = document.querySelector('canvas')
+        var ctx = canvas.getContext('2d')
+
+        function Dot(params) {
+            this.x = params.x
+            this.y = params.y
+        }
+
+        Dot.prototype.draw = function () {
+            ctx.beginPath()
+            ctx.fillStyle = 'blue'
+            // ctx.fillRect(0, 0, 10, 10)
+            ctx.arc(this.x, this.y, 5, 0, 2 * Math.PI, false)
+            ctx.fill()
+            ctx.closePath()
+        }
+        Dot.prototype.move = function () {
+            this.x += 1
+        }
+        var dot = new Dot({
+            x: 20,
+            y: 150
+        })
+        // dot.draw()
+
+        setInterval(function () {
+            // ctx.clearRect(0,0,300,300)
+            dot.move()
+            dot.draw()
+        }, 100);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>Notification</p>
+
+
+    <script>
+        
+        // 申请权限
+        Notification.requestPermission(function () {
+            // 查看权限
+            console.log(Notification.permission);
+
+            if (Notification.permission === 'granted') {
+                var notification = new Notification('hi there!', {
+                    body: '帅',
+                    icon: './img/compatible_chrome.gif'
+                })
+            }else {
+                alert('无权发出弹窗')
+            }
+        })
+    
+    </script>
+
+</body>
+
+</html>

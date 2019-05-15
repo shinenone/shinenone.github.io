@@ -1,0 +1,104 @@
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+button {
+  padding: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.slider {
+  margin: 50px auto;
+  width: 800px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all .7s;
+  transition: all .7s;
+}
+.slider button i {
+  font-size: 36px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.slider .btn-left {
+  position: absolute;
+  top: 50%;
+  margin-top: -18px;
+  background: none;
+  left: 20px;
+}
+.slider .btn-right {
+  position: absolute;
+  top: 50%;
+  margin-top: -18px;
+  background: none;
+  right: 20px;
+}
+.slider:hover {
+  background: red;
+}
+.slider ul {
+  width: 4000px;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+.slider ul li {
+  height: 500px;
+  width: 800px;
+  margin: 0 auto;
+  list-style: none;
+  position: absolute;
+}
+.slider ul li:nth-child(1) {
+  background: url(../img/gta-1.jpg);
+  background-size: 100% 100%;
+  left: 0;
+}
+.slider ul li:nth-child(2) {
+  background: url(../img/gta-2.jpg);
+  background-size: 100% 100%;
+  left: 800px;
+}
+.slider ul li:nth-child(3) {
+  background: url(../img/gta-3.jpg);
+  background-size: 100% 100%;
+  left: 1600px;
+}
+.slider ul li:nth-child(4) {
+  background: url(../img/gta-4.jpg);
+  background-size: 100% 100%;
+  left: 2400px;
+}
+.slider ul li:nth-child(5) {
+  background: url(../img/gta-5.jpg);
+  background-size: 100% 100%;
+  left: 3200px;
+}
+.slider .skip {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  margin-left: -250px;
+  width: 500px;
+  text-align: center;
+}
+.slider .skip button {
+  margin-left: 8px;
+  height: 7px;
+  width: 45px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.slider .skip button:hover {
+  -webkit-transition: all .6s;
+  transition: all .6s;
+  background: rgba(255, 255, 255, 0.8);
+}
+.slider .skip .active {
+  background: rgba(255, 255, 255, 0.8);
+}
+/*# sourceMappingURL=./main.css.map */

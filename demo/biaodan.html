@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="GET">
+        <input type="text" name="phone">
+        <input type="submit" value="提交">
+    </form>
+
+    <script>
+        function isPhone(str) {
+            var phoneRegexp = /\d{11}/ig
+            return phoneRegexp.test(str)
+        }
+
+        document.forms[0].onsubmit = function (e) {
+            var value = document.getElementsByName('phone')[0].value
+            if (!isPhone(value)) {
+                e.preventDefault()
+                alert('输入的格式有误')
+            }
+        }
+    </script>
+
+</body>
+
+</html>

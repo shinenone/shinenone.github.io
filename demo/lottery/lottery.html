@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="turntable"></div>
+        <div class="btn-bg">
+            <button></button>
+        </div>
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            width: 650px;
+            height: 600px;
+            background: url(images/turntable-bg.jpg);
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .turntable {
+            width: 450px;
+            height: 450px;
+            background: url(images/turntable.png);
+            position: absolute;
+            top: 60px;
+            left: 119px;
+        }
+
+        .btn-bg {
+            width: 174px;
+            height: 228px;
+            background: url(images/pointer.png);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -140px;
+            margin-left: -75px;
+        }
+
+        button {
+            width: 140px;
+            height: 140px;
+            margin-top: 62px;
+            background: none;
+            border: none;
+            Outline: none;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        
+    </style>
+
+    <script>
+        var btn = document.getElementsByTagName('button')[0];
+        var turntable = document.getElementsByClassName('turntable')[0];
+        var info = {
+            code: undefined,
+            txt: undefined
+        }
+        var canClick = true;
+
+        function info(deg) {
+            turntable.style.transform = deg;
+        }
+
+        btn.onclick = function () {
+
+            if (canClick == true) {
+                //每次单击先重置角度
+                canClick = false;
+                turntable.style.transition = 'all 0s'
+                turntable.style.transform = 'rotate(0deg)'
+
+                setTimeout(function () {
+
+                    var i = Math.round(Math.random() * 100);
+                    console.log("randomNumber", i);
+
+                    if (i <= 4) {
+                        info.code = 1;
+                        info.txt = '您抽中免单4999元';
+                    } else if (i <= 14) {
+                        info.code = 2;
+                        info.txt = '您抽中免单50元';
+                    } else if (i <= 29) {
+                        info.code = 3;
+                        info.txt = '您抽中免单10元';
+                    } else if (i <= 44) {
+                        info.code = 4;
+                        info.txt = '您抽中免单5元';
+                    } else if (i <= 64) {
+                        info.code = 5;
+                        info.txt = '您抽中免分期服务费';
+                    } else if (i <= 84) {
+                        info.code = 6;
+                        info.txt = '您抽中提高白条额度';
+                    } else {
+                        info.code = 7;
+                        info.txt = '很遗憾您未中奖';
+                    }
+
+                    var deg = 27 + (info.code - 1) * (360 / 7) + 1800;
+                    turntable.style.transition = 'all 2.4s'
+                    turntable.style.transform = 'rotate(' + deg + 'deg)'
+                    console.log(info.code);
+
+                }, 10)
+
+                setTimeout(function () {
+                    canClick = true;
+                    alert(info.txt);
+                }, 2500)
+                //函数运行完才能进行下次点击函数
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <div class="slider clearfix">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <button class="btn-left"><i class="fa fa-chevron-left"></i></button>
+        <button class="btn-right"><i class="fa fa-chevron-right"></i></button>
+        <div class="skip">
+            <button class="active"></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+        </div>
+    </div>
+
+    <script>
+        var pic = document.getElementsByTagName('ul')[0];
+        var btnLeft = document.getElementsByClassName('btn-left')[0];
+        var btnRight = document.getElementsByClassName('btn-right')[0];
+        var skip = document.getElementsByClassName('skip')[0];
+        var btns = skip.getElementsByTagName('button');
+        var slider = document.getElementsByClassName('slider')[0];
+        var i = 0;
+        var canClick = true;
+
+        //封装切换轮播图函数
+        function changePic() {
+            resetBtn();
+            var pos = -800 * i;
+            pic.style.marginLeft = pos + 'px';
+            // btns[i].style.background = 'rgba(255,255,255, 0.7)';
+        }
+
+        function resetBtn() {
+            //重置按钮默认样式
+            for (var j = 0; j < btns.length; j++) {
+                btns[j].index = j;
+                btns[j].className = '';
+            }
+
+            //激活当前按钮样式
+            btns[i].className = 'active'
+        }
+
+        //封装切换上一张的函数
+        function prevPic() {
+            if (canClick == true) {
+                canClick == false
+                if (i > 0) {
+                    i--;
+                } else {
+                    i = 4;
+                }
+                changePic();
+                setTimeout(function () {
+                    canClick == true
+                },1000);
+            }
+
+
+
+        }
+
+        //封装切换下一张的函数
+        function nextPic() {
+            if (i < 4) {
+                i++;
+            } else {
+                i = 0;
+            }
+            changePic();
+        }
+
+        //下方按钮点击跳转
+        for (let x = 0; x < btns.length; x++) {
+
+            btns[x].index = x;
+
+            btns[x].onclick = function () {
+                //重置按钮默认样式
+                for (var j = 0; j < btns.length; j++) {
+                    btns[j].className = '';
+                }
+                //激活当前按钮样式
+                this.className = 'active'
+                i = x;
+                changePic();
+            }
+        }
+
+        //左按钮点击切换上一张
+        btnLeft.addEventListener('click', prevPic)
+
+        //右按钮点击切换下一张
+        btnRight.addEventListener('click', nextPic)
+
+
+        //设置周期执行
+        var intervalId = setInterval(btnRightJudge, 3000);
+
+        //鼠标移入
+        slider.onmouseover = function () {
+            //取消定时器
+            clearInterval(intervalId);
+        }
+
+        //鼠标移出
+        slider.onmouseout = function () {
+            //周期执行
+            intervalId = setInterval(btnRightJudge, 3000);
+        }
+    </script>
+
+</body>
+
+</html>
