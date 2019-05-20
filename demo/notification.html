@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>桌面弹窗</title>
 </head>
 
 <body>
 
     <p>Notification</p>
-
+    <span></span>
 
     <script>
         
@@ -25,8 +25,10 @@
                     body: '帅',
                     icon: './img/compatible_chrome.gif'
                 })
+                document.getElementsByTagName('span')[0].innerText = '支持弹窗'
             }else {
                 alert('无权发出弹窗')
+                document.getElementsByTagName('span')[0].innerText = '不支持弹窗'
             }
         })
     

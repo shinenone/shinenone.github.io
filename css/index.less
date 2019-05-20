@@ -30,9 +30,10 @@ header {
 #main {
     padding: 50px 0;
 
-    .introduce {
+    .title {
         text-align: center;
         padding-bottom: 35px;
+
         h1 {
             font-size: 22px;
             color: @c;
@@ -56,54 +57,160 @@ header {
     .item {
         overflow: hidden;
 
-        .card-grid {
-            width: 33.333%;
-            padding: 20px;
-            float: left;
+        .row {
+            padding-top: 20px;
+            padding-bottom: 30px;
 
-            .cards {
-                background: #f1f1f1;
-                border: 1px solid #bbbbbb;
-                text-align: center;
-                position: relative;
-                top: 0;
-                left: 0;
-                transition: all .3s;
+            .classify-title {
+                padding: 0 20px;
 
-                img {
-                    display: block;
+                h3 {
+                    font-size: 16px;
+                    color: #303030;
+                    font-weight: bold;
                 }
+            }
 
-                a {
-                    display: block;
-                    position: absolute;
-                    top: 1px;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: #000;
-                    opacity: 0;
-                    transition: inherit;
+            .outer {
+                overflow: hidden;
+                width: 100%;
+                padding: 20px 0;
+
+                .card-grid {
+                    width: 33.333%;
+                    padding: 0 20px;
+                    float: left;
+
+                    .cards {
+                        background: #f1f1f1;
+                        border: 1px solid #bbbbbb;
+                        text-align: center;
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        transition: all .3s;
+
+                        img {
+                            display: block;
+                        }
+
+                        a {
+                            display: block;
+                            position: absolute;
+                            top: 1px;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: #000;
+                            opacity: 0;
+                            transition: inherit;
+
+                            &:hover {
+                                opacity: .4;
+                            }
+                        }
+
+                        h5 {
+                            font-size: 13px;
+                            padding: 10px;
+                        }
+
+                        &:hover {
+                            box-shadow: 7px 7px 10px 0 rgba(48, 81, 230, 0.15);
+                            top: -4px;
+                            left: -2px;
+                        }
+                    }
+                }
+            }
+
+            .introduce {
+                padding: 0 20px;
+                text-align: left;
+                width: 100%;
+
+                .control {
+                    background: rgb(235, 235, 235);
+                    padding: 10px 10px;
+                    overflow: hidden;
+                    transition: all .3s;
 
                     &:hover {
-                        opacity: .4;
+                        background: rgb(230, 230, 230);
+                        cursor: pointer;
+                    }
+
+                    span {
+                        font-size: 16px;
+                        color: rgb(105, 105, 105);
+                        line-height: 30px;
+                    }
+
+                    div {
+                        float: right;
+                        height: 30px;
+                        width: 30px;
+                        border: 1px solid rgb(105, 105, 105);
+                        text-align: center;
+
+                        i {
+                            font-size: 18px;
+                            line-height: 30px;
+                            font-style: normal;
+                            color: rgb(105, 105, 105);
+                            padding: 0 6px;
+                        }
                     }
                 }
 
-                h5 {
-                    font-size: 13px;
-                    padding: 10px;
-                }
+                .details {
+                    transition: all .5s;
+                    visibility: hidden;
+                    opacity: 0;
+                    height: 0;
 
-                &:hover{
-                    box-shadow: 7px 7px 10px 0 rgba(86, 117, 255, 0.2);
-                    top: -4px;
-                    left: -2px;
+                    .button {
+                        padding: 10px 15px;
+                        background: rgb(230, 230, 230);
+
+                        span {
+                            margin-right: 30px;
+                            font-size: 13px;
+                            padding: 5px 10px;
+
+                            &.active {
+                                background: rgb(201, 201, 201);
+                            }
+                        }
+                    }
+
+                    .text {
+                        background: rgb(201, 201, 201);
+
+                        div {
+                            padding: 20px 15px;
+                            display: none;
+
+                            &.active {
+                                display: block;
+                            }
+
+                            h3 {
+                                font-size: 14px;
+                                margin: 10px 0;
+                                font-weight: bold;
+                            }
+
+                            p {
+                                font-size: 14px;
+                                line-height: 30px;
+
+                            }
+                        }
+                    }
                 }
             }
         }
-
-
     }
 
 }

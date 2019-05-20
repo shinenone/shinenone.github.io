@@ -23,17 +23,17 @@ header .wrapper h1 {
 #main {
   padding: 50px 0;
 }
-#main .introduce {
+#main .title {
   text-align: center;
   padding-bottom: 35px;
 }
-#main .introduce h1 {
+#main .title h1 {
   font-size: 22px;
   color: #303030;
   font-weight: bold;
   position: relative;
 }
-#main .introduce h1::after {
+#main .title h1::after {
   content: '';
   display: block;
   width: 220px;
@@ -47,12 +47,29 @@ header .wrapper h1 {
 #main .item {
   overflow: hidden;
 }
-#main .item .card-grid {
+#main .item .row {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+#main .item .row .classify-title {
+  padding: 0 20px;
+}
+#main .item .row .classify-title h3 {
+  font-size: 16px;
+  color: #303030;
+  font-weight: bold;
+}
+#main .item .row .outer {
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 0;
+}
+#main .item .row .outer .card-grid {
   width: 33.333%;
-  padding: 20px;
+  padding: 0 20px;
   float: left;
 }
-#main .item .card-grid .cards {
+#main .item .row .outer .card-grid .cards {
   background: #f1f1f1;
   border: 1px solid #bbbbbb;
   text-align: center;
@@ -62,10 +79,10 @@ header .wrapper h1 {
   -webkit-transition: all .3s;
   transition: all .3s;
 }
-#main .item .card-grid .cards img {
+#main .item .row .outer .card-grid .cards img {
   display: block;
 }
-#main .item .card-grid .cards a {
+#main .item .row .outer .card-grid .cards a {
   display: block;
   position: absolute;
   top: 1px;
@@ -77,16 +94,89 @@ header .wrapper h1 {
   -webkit-transition: inherit;
   transition: inherit;
 }
-#main .item .card-grid .cards a:hover {
+#main .item .row .outer .card-grid .cards a:hover {
   opacity: .4;
 }
-#main .item .card-grid .cards h5 {
+#main .item .row .outer .card-grid .cards h5 {
   font-size: 13px;
   padding: 10px;
 }
-#main .item .card-grid .cards:hover {
-  box-shadow: 7px 7px 10px 0 rgba(86, 117, 255, 0.2);
+#main .item .row .outer .card-grid .cards:hover {
+  box-shadow: 7px 7px 10px 0 rgba(48, 81, 230, 0.15);
   top: -4px;
   left: -2px;
+}
+#main .item .row .introduce {
+  padding: 0 20px;
+  text-align: left;
+  width: 100%;
+}
+#main .item .row .introduce .control {
+  background: #ebebeb;
+  padding: 10px 10px;
+  overflow: hidden;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+#main .item .row .introduce .control:hover {
+  background: #e6e6e6;
+  cursor: pointer;
+}
+#main .item .row .introduce .control span {
+  font-size: 16px;
+  color: #696969;
+  line-height: 30px;
+}
+#main .item .row .introduce .control div {
+  float: right;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #696969;
+  text-align: center;
+}
+#main .item .row .introduce .control div i {
+  font-size: 18px;
+  line-height: 30px;
+  font-style: normal;
+  color: #696969;
+  padding: 0 6px;
+}
+#main .item .row .introduce .details {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+}
+#main .item .row .introduce .details .button {
+  padding: 10px 15px;
+  background: #e6e6e6;
+}
+#main .item .row .introduce .details .button span {
+  margin-right: 30px;
+  font-size: 13px;
+  padding: 5px 10px;
+}
+#main .item .row .introduce .details .button span.active {
+  background: #c9c9c9;
+}
+#main .item .row .introduce .details .text {
+  background: #c9c9c9;
+}
+#main .item .row .introduce .details .text div {
+  padding: 20px 15px;
+  display: none;
+}
+#main .item .row .introduce .details .text div.active {
+  display: block;
+}
+#main .item .row .introduce .details .text div h3 {
+  font-size: 14px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+#main .item .row .introduce .details .text div p {
+  font-size: 14px;
+  line-height: 30px;
 }
 /*# sourceMappingURL=./index.css.map */

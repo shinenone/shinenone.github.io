@@ -8,6 +8,7 @@
     <title>赖建韬的个人主页</title>
     <link href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
 </head>
 
 <body>
@@ -18,74 +19,450 @@
         </div>
     </header>
 
+    <div class="show">
+        加载中请稍后~
+    </div>
+
     <div id="main">
         <div class="wrapper">
-            <div class="introduce">
-                <h1>我的个人项目</h1>
+
+            <div class="project">
+                <div class="title">
+                    <h1>我的个人项目</h1>
+                </div>
+
+                <div class="item">
+
+                    <div class="row">
+                        <div class="classify-title">
+                            <h3>一、VUE项目</h3>
+                        </div>
+                        <div class="outer">
+                            <div class="card-grid">
+                                <div class="cards">
+                                    <a href="https://shinenone.github.io/kaiyan/"></a>
+                                    <img src="./img/1.jpg" alt="">
+                                    <h5>开眼视频APP</h5>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="introduce">
+                            <div class="control">
+                                <span>项目详情</span>
+                                <div><i>+</i></div>
+                            </div>
+
+                            <div class="details">
+                                <div class="button">
+                                    <span class="active">开眼视频APP</span>
+                                </div>
+                                <div class="text">
+                                    <div class="one active">
+                                        <h3>项目描述：</h3>
+                                        <p>开眼视频APP是一款精品短视频日报应用</p>
+                                        <h3>功能描述：</h3>
+                                        <ul>
+                                            <li>
+                                                <p>该项目具有首页的发现、推荐、日报等多个页面</p>
+                                            </li>
+                                            <li>
+                                                <p>该项目使用了vue-cli脚手架工具搭建环境</p>
+                                            </li>
+                                            <li>
+                                                <p>该项目使用了vue-router实现多重路由的跳转</p>
+                                            </li>
+                                            <li>
+                                                <p>该项目使用动态路由匹配，实现视频播放页面切换到另外一个视频播放页面，只更换数据</p>
+                                            </li>
+                                            <li>
+                                                <p>该项目使用了axios来获取开眼视频APP的相关数据</p>
+                                            </li>
+                                            <li>
+                                                <p>该项目使用了HTML、CSS排版布局，Less预处理语言</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="classify-title">
+                            <h3>二、网站类型</h3>
+                        </div>
+                        <div class="outer">
+                            <div class="card-grid">
+                                <div class="cards">
+                                    <a href="https://shinenone.github.io/cubic/"></a>
+                                    <img src="./img/1.jpg" alt="">
+                                    <h5>CUBIC企业网站</h5>
+                                </div>
+                            </div>
+
+                            <div class="card-grid">
+                                <div class="cards">
+                                    <a href="https://shinenone.github.io/cultivation/"></a>
+                                    <img src="./img/2.jpg" alt="">
+                                    <h5>HTML5+CSS3响应式网页</h5>
+                                </div>
+                            </div>
+
+                            <div class="card-grid">
+                                <div class="cards">
+                                    <a href="https://shinenone.github.io/travel/"></a>
+                                    <img src="./img/3.jpg" alt="">
+                                    <h5>HTML网页</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="introduce">
+                            <div class="control">
+                                <span>项目详情</span>
+                                <div>
+                                    <i>+</i>
+                                </div>
+                            </div>
+
+                            <div class="details">
+                                <div class="button">
+                                    <span class="active">CUBIC企业网站</span>
+                                    <span>项目二</span>
+                                    <span>项目三</span>
+                                </div>
+                                <div class="text">
+                                    <div class="one active">
+                                        <h3>项目描述</h3>
+                                        <p>当前主流的企业网站模板，使用了HTML5、CSS3、JavaScript ES6等最新标签语法</p>
+                                        <h3>功能描述</h3>
+                                        <ul>
+                                            <li>
+                                                <p>使用HTML、CSS排版布局</p>
+                                            </li>
+                                            <li>
+                                                <p>使用Bootstrap框架实现响应式</p>
+                                            </li>
+                                            <li>
+                                                <p>使用HTML5的video视频、canvas画布等等，并规范使用语义化标签</p>
+                                            </li>
+                                            <li>
+                                                <p>使用了CSS3的动画和媒体查询等，实现页面动画效果</p>
+                                            </li>
+                                            <li>
+                                                <p>使用了Less预处理语言，更简洁、规范的管理CSS代码格式</p>
+                                            </li>
+                                            <li>
+                                                <p>使用JavaScript，使用DOM操作页面，实现用户交互效果</p>
+                                            </li>
+                                            <li>
+                                                <p>使用了JavaScript ES6语法</p>
+                                            </li>
+                                            <li>
+                                                <p>使用了minireset,CSS初始化框架</p>
+                                            </li>
+                                            <li>
+                                                <p>使用了awesome，icon图标库</p>
+                                            </li>
+                                            <li>
+                                                <p>使用css，font属性更换页面默认字体</p>
+                                            </li>
+                                            <li>
+                                                <p>实现了背景图视差效果</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="two">
+                                        <p>222222222222222222222</p>
+                                        <p>xxxxxxxxxxxxx</p>
+                                    </div>
+                                    <div class="three">
+                                        <p>333333333333333333333</p>
+                                        <p>xxxxxxxxxxxxx</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="classify-title">
+                            <h3>三、JavaScript</h3>
+                        </div>
+                        <div class="outer">
+                            <div class="card-grid">
+                                <div class="cards">
+                                    <a href="https://shinenone.github.io/snake/"></a>
+                                    <img src="./img/4.jpg" alt="">
+                                    <h5>JS ES6、HTML5版贪吃蛇</h5>
+                                </div>
+                            </div>
+
+                            <div class="card-grid">
+                                <div class="cards">
+                                    <img src="./img/7.jpg" alt="">
+                                    <h5>原生JavaScript贪吃蛇</h5>
+                                    <a href="https://shinenone.github.io/chart/"></a>
+                                </div>
+                            </div>
+
+                            <div class="card-grid">
+                                <div class="cards">
+                                    <a href="https://shinenone.github.io/incise/"></a>
+                                    <img src="./img/5.jpg" alt="">
+                                    <h5>原生JS鼠标悬停切割放大特效</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="introduce">
+                            <div class="control">
+                                <span>项目详情</span>
+                                <div>
+                                    <i>+</i>
+                                </div>
+                            </div>
+
+                            <div class="details">
+                                <div class="button">
+                                    <span class="active">项目一</span>
+                                    <span>项目二</span>
+                                    <span>项目三</span>
+                                </div>
+                                <div class="text">
+                                    <div class="one active">
+                                        <p>111111111111111111111</p>
+                                        <p>xxxxxxxxxxxxx</p>
+                                    </div>
+                                    <div class="two">
+                                        <p>222222222222222222222</p>
+                                        <p>xxxxxxxxxxxxx</p>
+                                    </div>
+                                    <div class="three">
+                                        <p>333333333333333333333</p>
+                                        <p>xxxxxxxxxxxxx</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="outer">
+                            <div class="card-grid">
+                                <div class="cards">
+                                    <a href="https://shinenone.github.io/slider/"></a>
+                                    <img src="./img/6.jpg" alt="">
+                                    <h5>jQuery无缝轮播图</h5>
+                                </div>
+                            </div>
+
+                            <div class="card-grid">
+                                <div class="cards">
+                                    <img src="./img/7.jpg" alt="">
+                                    <h5>CSS3 3D柱形统计图</h5>
+                                    <a href="https://shinenone.github.io/chart/"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="item">
-
-                <div class="card-grid">
-                    <div class="cards">
-
-                        <a href="https://shinenone.github.io/cubic/"></a>
-                        <img src="./img/1.jpg" alt="">
-                        <h5>HTML5+CSS3响应式网页</h5>
-                    </div>
+            <div class="demo">
+                <div class="title">
+                    <h1>我的小demo</h1>
                 </div>
 
-                <div class="card-grid">
-                    <div class="cards">
-                        <a href="https://shinenone.github.io/cultivation/"></a>
-                        <img src="./img/2.jpg" alt="">
-                        <h5>HTML5+CSS3响应式网页</h5>
-                    </div>
-                </div>
+                <div class="item">
+                    <div class="row">
+                        <div class="classify-title">
+                            <h3>一、轮播图</h3>
+                        </div>
+                        <div class="outer">
 
-                <div class="card-grid">
-                    <div class="cards">
-                        <a href="https://shinenone.github.io/travel/"></a>
-                        <img src="./img/3.jpg" alt="">
-                        <h5>HTML网页</h5>
-                    </div>
-                </div>
+                            <div class="card-grid">
+                                <div class="cards">
+                                    <a href="https://shinenone.github.io/snake/"></a>
+                                    <img src="./img/4.jpg" alt="">
+                                    <h5>JavaScript轮播图</h5>
+                                </div>
+                            </div>
 
-                <div class="card-grid">
-                    <div class="cards">
-                        <a href="https://shinenone.github.io/snake/"></a>
-                        <img src="./img/4.jpg" alt="">
-                        <h5>HTML5canvas版 贪吃蛇</h5>
-                    </div>
-                </div>
+                            <div class="card-grid">
+                                <div class="cards">
+                                    <a href="https://shinenone.github.io/incise/"></a>
+                                    <img src="./img/5.jpg" alt="">
+                                    <h5>jquery轮播图</h5>
+                                </div>
+                            </div>
 
-                <div class="card-grid">
-                    <div class="cards">
-                        <a href="https://shinenone.github.io/incise/"></a>
-                        <img src="./img/5.jpg" alt="">
-                        <h5>原生JS鼠标悬停切割放大特效</h5>
-                    </div>
-                </div>
+                            <div class="card-grid">
+                                <div class="cards">
+                                    <a href="https://shinenone.github.io/slider/"></a>
+                                    <img src="./img/6.jpg" alt="">
+                                    <h5>jQuery无缝轮播图</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="introduce">
+                            <div class="control">
+                                <span>项目详情</span>
+                                <div>
+                                    <i>+</i>
+                                </div>
+                            </div>
 
-                <div class="card-grid">
-                    <div class="cards">
-                        <a href="https://shinenone.github.io/slider/"></a>
-                        <img src="./img/6.jpg" alt="">
-                        <h5>jQuery无缝轮播图</h5>
+                            <div class="details">
+                                <div class="button">
+                                    <span class="active">项目一</span>
+                                    <span>项目二</span>
+                                    <span>项目三</span>
+                                </div>
+                                <div class="text">
+                                    <div class="one active">
+                                        <p>111111111111111111111</p>
+                                        <p>xxxxxxxxxxxxx</p>
+                                    </div>
+                                    <div class="two">
+                                        <p>222222222222222222222</p>
+                                        <p>xxxxxxxxxxxxx</p>
+                                    </div>
+                                    <div class="three">
+                                        <p>333333333333333333333</p>
+                                        <p>xxxxxxxxxxxxx</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="card-grid">
-                    <div class="cards">
-                        <img src="./img/7.jpg" alt="">
-                        <h5>CSS3 3D柱形统计图</h5>
-                        <a href="https://shinenone.github.io/chart/"></a>
+                    <div class="row">
+                        <div class="classify-title">
+                            <h3>二、数据可视化</h3>
+                        </div>
+                        <div class="outer">
+
+                            <div class="card-grid">
+                                <div class="cards">
+                                    <a href="https://shinenone.github.io/snake/"></a>
+                                    <img src="./img/4.jpg" alt="">
+                                    <h5>JavaScript轮播图</h5>
+                                </div>
+                            </div>
+
+                            <div class="card-grid">
+                                <div class="cards">
+                                    <a href="https://shinenone.github.io/incise/"></a>
+                                    <img src="./img/5.jpg" alt="">
+                                    <h5>jquery轮播图</h5>
+                                </div>
+                            </div>
+
+                            <div class="card-grid">
+                                <div class="cards">
+                                    <a href="https://shinenone.github.io/slider/"></a>
+                                    <img src="./img/6.jpg" alt="">
+                                    <h5>jQuery无缝轮播图</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="introduce">
+                            <div class="control">
+                                <span>项目详情</span>
+                                <div>
+                                    <i>+</i>
+                                </div>
+                            </div>
+
+                            <div class="details">
+                                <div class="button">
+                                    <span class="active">项目一</span>
+                                    <span>项目二</span>
+                                    <span>项目三</span>
+                                </div>
+                                <div class="text">
+                                    <div class="one active">
+                                        <p>111111111111111111111</p>
+                                        <p>xxxxxxxxxxxxx</p>
+                                    </div>
+                                    <div class="two">
+                                        <p>222222222222222222222</p>
+                                        <p>xxxxxxxxxxxxx</p>
+                                    </div>
+                                    <div class="three">
+                                        <p>333333333333333333333</p>
+                                        <p>xxxxxxxxxxxxx</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
+
+    <script>
+        var details = $('.introduce .details');
+        console.log($('.introduce .control i'));
+
+
+        details.css({
+            visibility: 'hidden',
+            opacity: '0',
+            height: '0'
+        })
+
+        const arr = ['350px', '500px', '100px', '200px']
+
+        for (let i = 0; i < $('.control').length; i++) {
+            $('.control').eq(i).on('click', function () {
+                if ($('.details').eq(i)[0].style.visibility == 'hidden') {
+                    details.eq(i).css({
+                        visibility: 'visible',
+                        opacity: '1',
+                        height: arr[i]
+                    })
+                    $('.introduce .control i').eq(i)[0].innerText = '-'
+                } else {
+                    details.eq(i).css({
+                        visibility: 'hidden',
+                        opacity: '0',
+                        height: '0'
+                    })
+                    $('.introduce .control i').eq(i)[0].innerText = '+'
+                }
+            })
+        }
+
+        for (let i = 0; i < $('.details .button').length; i++) {
+
+            for (let x = 0; x < $('.details .button').eq(i).children().length; x++) {
+
+                $('.details .button').eq(i).children().eq(x).on('click', function () {
+
+                    for (let y = 0; y < $('.details .button').eq(i).children().length; y++) {
+                        $('.details .button').eq(i).children().eq(y).removeClass('active')
+                    }
+                    $('.details .button').eq(i).children().eq(x).addClass('active')
+
+                    for (let y = 0; y < $('.details .text').eq(i).children().length; y++) {
+                        $('.details .text').eq(i).children().eq(y).removeClass('active')
+                    }
+
+                    $('.details .text').eq(i).children().eq(x).addClass('active')
+                })
+            }
+        }
+
+        window.onload = function () {
+            document.querySelectorAll('.show')[0].style.display = 'none'
+        }
+
+    </script>
 </body>
 
 </html>

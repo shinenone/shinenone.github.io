@@ -5,24 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>省市联动</title>
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
 
 </head>
 
 <body>
-    <select name="provinces" id="provinces"></select>
-    <select name="citys" id="citys"></select>
+    <div class="wrap">
+            <select name="provinces" id="provinces"></select>
+            <select name="citys" id="citys"></select>
+    </div>
 
 
 
     <style>
+        .wrap {
+            text-align: center;
+            margin-top: 50px;
+        }
         select {
             width: 140px;
             padding: 5px 20px;
             border-radius: 20px;
             outline: none;
             font-size: 14px;
+            margin-left: 20px;
         }
     </style>
 
@@ -30,14 +37,11 @@
     <script>
         $.get("./citys.json",
             function (data) {
-                // console.log(data.provinces);
-
                 data.provinces.forEach(function (element) {
                     $('#provinces').append('<option value="' + element.provinceName + '">' + element
                         .provinceName + '</option>');
                     $('#provinces option').first().attr('selected', 'selected') //初始化第一个省
                 });
-
                 // 第一个省的市
                 data.provinces[0].citys.forEach(function (element) {
                     $('#citys').append('<option value="' + element.citysName + '">' + element.citysName + '</option>');
@@ -47,16 +51,10 @@
 
         // 给省绑定点击事件
         $('#provinces').on('change', function () {
-
             $('#citys').empty() //清空子元素
-            // console.log($('#provinces option:selected').first().index());
-
             var i = $('#provinces option:selected').first().index(); //获取当前option的索引
-
             $.get("./citys.json",
                 function (data) {
-                    //console.log(data.provinces[i].citys); //判断出当前点击是哪个option
-
                     data.provinces[i].citys.forEach(function (element) {
                         $('#citys').append('<option value="' + element.citysName + '">' + element.citysName + '</option>');
                     });
