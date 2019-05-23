@@ -64,7 +64,7 @@ export default {
             })
             .catch(err => {
                 console.error(err);
-                this.bannerData = banner.itemList;
+                this.bannerData = banner.itemList[0].data.itemList;
             });
 
         axios
