@@ -3,8 +3,8 @@
 ```
     const i = new Active();
     if (i.status === 'working') {
-        i.mood = 'happily';
+        i.mood = 'seriously';
     } else if (i.status === 'living') {
-        i.mood = 'seriously;
+        i.mood = 'happily';
     }
 ```
