@@ -67,9 +67,9 @@ export default {
         }
         this.toLoad = true;
       })
-      .catch(err => {
-        console.error(err);
-      });
+      // .catch(err => {
+      //   console.error(err);
+      // });
   },
   methods: {
     goback: function() {

@@ -122,7 +122,6 @@ export default {
                 this.loading = false;
             })
             .catch(err => {
-                console.error(err);
                 this.recommend = recommendData.dailyList[0].videoList;
                 this.toLoad = true;
                 this.loading = false;
@@ -144,7 +143,6 @@ export default {
                 this.loading = false;
             })
             .catch(err => {
-                console.error(err);
                 for (let i = 0; i < cardData.itemList.length; i++) {
                     if (i != 0) {
                         this.viewData.push(cardData.itemList[i]);

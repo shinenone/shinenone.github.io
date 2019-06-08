@@ -125,7 +125,7 @@ export default {
             beforeDataTwo: [],
             videoOk: false,
             loading: true,
-            loadingText: '加载过于缓慢'
+            loadingText: '正在加载中'
         };
     },
     created() {
@@ -138,7 +138,7 @@ export default {
                 this.loading = false;
             })
             .catch(err => {
-                console.error(err);
+                this.loading = false;
                 this.beforeData = homeDailyData.itemList;
             });
         this.videoOk = true;

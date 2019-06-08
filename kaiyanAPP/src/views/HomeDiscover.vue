@@ -1,5 +1,5 @@
 <template>
-    <div class="home-discover">
+    <div id="home-discover">
         <div class="loading" v-if="loading">
             <svg
                 version="1.1"
@@ -98,7 +98,6 @@ export default {
                 this.loading = false;
             })
             .catch(err => {
-                console.error(err);
                 this.bannerData = banner.itemList[0].data.itemList;
                 this.loading = false;
             });
@@ -109,7 +108,6 @@ export default {
                 this.hotClassify = result.data.result.itemList;
             })
             .catch(err => {
-                console.error(err);
                 this.hotClassify = DisData.result.itemList;
             });
     }
@@ -117,9 +115,10 @@ export default {
 </script>
 
 <style lang="less">
-.home-discover {
+#home-discover {
     padding-top: 40px;
     padding-bottom: 40px;
+    overflow: hidden;
 
     .loading {
         padding: 70px;

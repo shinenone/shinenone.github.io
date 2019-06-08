@@ -117,9 +117,9 @@ export default {
         .then(result => {
           this.videoData = result.data;
         })
-        .catch(err => {
-          console.error(err);
-        });
+        // .catch(err => {
+        //   console.error(err);
+        // });
 
       axios
         .get(
@@ -139,7 +139,6 @@ export default {
             "url(" + this.videoData.coverBlurred + ")";
         })
         .catch(err => {
-          console.error(err);
           this.videoOk = true;
           this.isrefresh = true;
         });

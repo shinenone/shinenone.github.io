@@ -32,9 +32,9 @@ export default {
       .then(result => {
         this.DetailsData = result.data.result;
       })
-      .catch(err => {
-        console.error(err);
-      });
+      // .catch(err => {
+      //   console.error(err);
+      // });
   }
 };
 </script>

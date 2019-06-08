@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0dee5b"],{8838:function(e,n,t){"use strict";t.r(n);var c=function(){var e=this,n=e.$createElement;e._self._c;return e._m(0)},u=[function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",{staticClass:"community"},[t("h1",[e._v("社区首页")])])}],s={name:"community"},a=s,i=t("2877"),l=Object(i["a"])(a,c,u,!1,null,null,null);n["default"]=l.exports}}]);
-//# sourceMappingURL=chunk-2d0dee5b.a78ed6a3.js.map
