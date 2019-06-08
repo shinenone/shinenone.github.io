@@ -1,5 +1,37 @@
 <template>
     <div class="home-recommend" v-if="toLoad">
+        <div class="loading" v-if="loading">
+            <svg
+                version="1.1"
+                id="loader-1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                width="40px"
+                height="40px"
+                viewBox="0 0 50 50"
+                style="enable-background:new 0 0 50 50;"
+                xml:space="preserve"
+            >
+                <path
+                    fill="#000"
+                    d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z"
+                    transform="rotate(138.704 25 25)"
+                >
+                    <animateTransform
+                        attributeType="xml"
+                        attributeName="transform"
+                        type="rotate"
+                        from="0 25 25"
+                        to="360 25 25"
+                        dur="0.6s"
+                        repeatCount="indefinite"
+                    ></animateTransform>
+                </path>
+            </svg>
+            <p>{{ loadingText }}</p>
+        </div>
         <div class="compile-choiceness">
             <div class="top">
                 <div class="text">
@@ -74,7 +106,9 @@ export default {
                 slidesOffsetAfter: 15 //slider与右边框的预设偏移量
             },
             viewData: [],
-            toLoad: false
+            toLoad: false,
+            loading: true,
+            loadingText: '正在加载中'
         };
     },
     created() {
@@ -85,11 +119,13 @@ export default {
             .then(result => {
                 this.recommend = result.data.dailyList[0].videoList;
                 this.toLoad = true;
+                this.loading = false;
             })
             .catch(err => {
                 console.error(err);
                 this.recommend = recommendData.dailyList[0].videoList;
                 this.toLoad = true;
+                this.loading = false;
             });
 
         axios
@@ -105,10 +141,10 @@ export default {
                     }
                 }
                 this.toLoad = true;
+                this.loading = false;
             })
             .catch(err => {
                 console.error(err);
-                this.toLoad = true;
                 for (let i = 0; i < cardData.itemList.length; i++) {
                     if (i != 0) {
                         this.viewData.push(cardData.itemList[i]);
@@ -116,6 +152,8 @@ export default {
                         this.titleData = cardData.itemList[i].data.header;
                     }
                 }
+                this.toLoad = true;
+                this.loading = false;
             });
     },
     methods: {
@@ -130,6 +168,17 @@ export default {
 .padLeftRight() {
     padding-left: 15px;
     padding-right: 15px;
+}
+.loading {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    p {
+        font-size: 14px;
+        color: #9b9b9b;
+    }
 }
 .home-recommend {
     padding-top: 40px;

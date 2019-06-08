@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d21e5b3"],{d4e2:function(e,t,n){"use strict";n.r(t);var s=function(){var e=this,t=e.$createElement;e._self._c;return e._m(0)},a=[function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"details-square"},[n("h1",[e._v("广场")])])}],l={name:"details-square"},r=l,u=n("2877"),c=Object(u["a"])(r,s,a,!1,null,null,null);t["default"]=c.exports}}]);
-//# sourceMappingURL=chunk-2d21e5b3.6f94c45c.js.map

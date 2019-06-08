@@ -41,7 +41,7 @@ export default {
 
 <style lang="less">
 .details-recommend {
-  padding: 0 15px;
+  padding: 0 15px 30px 15px;
 
   .update {
     h3 {
