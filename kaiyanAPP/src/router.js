@@ -8,25 +8,25 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      redirect: "/home-recommend",
+      redirect: "home-recommend",
       component: () => import("./views/Home.vue"),
       meta: {
-        footShow: true // true隐藏，默认false显示
+        footShow: true
       },
 
       children: [
         {
-          path: "/home-recommend",
+          path: "home-recommend",
           name: "home-recommend",
           component: () => import("./views/HomeRecommend.vue")
         },
         {
-          path: "/home-discover",
+          path: "home-discover",
           name: "home-discover",
           component: () => import("./views/HomeDiscover.vue")
         },
         {
-          path: "/home-daily",
+          path: "home-daily",
           name: "home-daily",
           component: () => import("./views/HomeDaily.vue")
         }

@@ -1,37 +1,5 @@
 <template>
     <div id="home-discover">
-        <div class="loading" v-if="loading">
-            <svg
-                version="1.1"
-                id="loader-1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                x="0px"
-                y="0px"
-                width="40px"
-                height="40px"
-                viewBox="0 0 50 50"
-                style="enable-background:new 0 0 50 50;"
-                xml:space="preserve">
-                <path
-                    fill="#000"
-                    d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z"
-                    transform="rotate(138.704 25 25)"
-                >
-                    <animateTransform
-                        attributeType="xml"
-                        attributeName="transform"
-                        type="rotate"
-                        from="0 25 25"
-                        to="360 25 25"
-                        dur="0.6s"
-                        repeatCount="indefinite"
-                    ></animateTransform>
-                </path>
-            </svg>
-            <p>{{ loadingText }}</p>
-        </div>
-
         <div class="banner">
             <swiper :options="swiperBannerOption">
                 <swiper-slide v-for="(item, index) in bannerData" :key="index">
@@ -83,9 +51,7 @@ export default {
                 slidesPerColumn: 2, //多行布局列数
                 slidesPerColumnFill: "column", //布局方式
                 freeMode: true //滑动模式
-            },
-            loading: true,
-            loadingText: '正在加载中'
+            }
         };
     },
     created() {
@@ -95,11 +61,9 @@ export default {
             )
             .then(result => {
                 this.bannerData = result.data.itemList[0].data.itemList;
-                this.loading = false;
             })
             .catch(err => {
                 this.bannerData = banner.itemList[0].data.itemList;
-                this.loading = false;
             });
 
         axios
@@ -118,16 +82,6 @@ export default {
 #home-discover {
     padding-top: 40px;
     padding-bottom: 40px;
-    overflow: hidden;
-
-    .loading {
-        padding: 70px;
-        text-align: center;
-        p {
-            font-size: 14px;
-            color: #9b9b9b;
-        }
-    }
 
     .banner {
         overflow: hidden;
